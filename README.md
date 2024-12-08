@@ -46,7 +46,7 @@
                 </ul>
             </li>
             <li><a href="#project-folder-layout">Project Folder Layout</a></li>
-            <li><a href="#data-model">Data Model</a></li>
+            <li><a href="#data-model---account">Data Model - Account</a></li>
             <li><a href="#local-kubernetes-development">Local Kubernetes Development</a></li>
         </ul>
     </li>
@@ -246,7 +246,7 @@ The code follows the **Model-View-Controller** pattern with all of the database 
 <br>
 
 
-### Data Model
+### Data Model - Account
 The Account model contains the following fields:
 
 | Name | Type | Optional |
