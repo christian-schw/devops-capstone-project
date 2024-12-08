@@ -57,8 +57,7 @@
 
 
 ## Introduction
-This repository was created as part of IBM's "DevOps and Software Engineering" program.<br>
-It's a capstone project about building a CI/CD pipeline.<br>
+This capstone project / repository was created as part of IBM's "DevOps and Software Engineering" program.<br>
 A template was used - see IBM repository: https://github.com/ibm-developer-skills-network/aolwx-devops-capstone-template.<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
