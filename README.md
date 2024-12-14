@@ -132,7 +132,52 @@ TODO: Update tech stack
 
 ## What I have done as part of the project
 ### Task 1 - Create and execute sprint plans
-TODO: XXXX
+The RESTful microservice is created with the help of an agile plan (Scrum).<br>
+This means, the first task is the Sprint 0.<br>
+<br>
+The main goal of Sprint 0 is to set up the team for future delivery by creating the basic project skeleton, defining the vision and preparing the product backlog.<br>
+<br>
+First, a user story template was created (can be found in: .github/ISSUE_TEMPLATE):<br>
+
+![planning-storytemplate-done](https://github.com/user-attachments/assets/0e30e5a5-c3f7-4cfd-8ecf-ac187585454e)
+
+The template provides the basis for the user stories to be created for the sprints.<br>
+It uses the Gherkin Syntax.<br>
+Gherkin is a simple description language with very few rules for the structured formulation of scenarios in the context of behavior-driven software development according to BDD principles.<br>
+<br>
+Next, the user stories were created.<br>
+The titles were provided by IBM as part of the project (e.g. "Update an account in the service") and I filled them with content.<br>
+Two examples (Note: Screenshots were taken later, therefore they are already labeled and assigned to a project):<br>
+
+![Issue Update an account in the service](https://github.com/user-attachments/assets/720a2d0c-ae14-4fc8-bbe1-4bdb22893df4)
+
+![Issue Containerize microservice using docker](https://github.com/user-attachments/assets/34ad0d12-b211-4876-90c5-f9d2e94912ef)
+
+The acceptance criteria define the status of "Done".<br>
+<br>
+After the user stories were completed, a GitHub project (Kanban board) was created.<br>
+All issues were assigned to the "New Issues" column:<br>
+
+![planning-userstories-done](https://github.com/user-attachments/assets/4f044fb0-be53-48a6-8c76-629379606fc5)
+
+The issues were then moved either to the icebox or the product backlog, depending on their priority.<br>
+For example, deploying is one of the last steps, which is why it ended up in the icebox.<br>
+<br>
+The priorities of the issues in the backlog have also been defined.<br>
+P0 is the highest priority and is therefore listed at the top.<br>
+P2 is the lowest priority and is therefore listed at the bottom.<br>
+
+![planning-labels-done](https://github.com/user-attachments/assets/47682d10-bf71-46ca-9d49-7948e675ef11)
+
+The following was also assigned to the issues at the end:
+- An iteration field "Sprint" which has a duration of 1 week. At this point, the date is 14/12/2024. This means that the 1st sprint starts on 14/12/2024 and ends on 20/12/2024.
+- The size and estimated story points were also determined. The scale (provided by IBM) is 3, 5, 8, 13 = S, M, L, XL.
+<br>
+The issues were moved from the product backlog to the sprint backlog and the result is as follows:<br>
+
+![planning-kanban-done](https://github.com/user-attachments/assets/c25154e1-6da6-4fd2-b55f-c18f23680953)
+
+Task 1 is finished. Task 2 can be started.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
