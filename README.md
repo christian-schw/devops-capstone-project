@@ -88,7 +88,7 @@ Tasks that need to be completed:
 ### Preview Images
 Preview images of the project:<br>
 <br>
-TODO: Insert preview images<br>
+TODO: Insert preview images. Use at least 1 image from each section<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
