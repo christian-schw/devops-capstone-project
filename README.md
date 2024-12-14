@@ -121,11 +121,8 @@ Course Provider: IBM<br>
 ### Tech Stack
 With regard to my role:<br>
 TODO: Update tech stack
-- CI/CD Tool: GitHub Actions
-- CI/CD Tool: Tekton
-- Container Orchestration: Kubernetes
-- Container Orchestration: Red Hat OpenShift
-- IBM Cloud IDE (based on Theia and Container)
+- GitHub
+- XXX
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
