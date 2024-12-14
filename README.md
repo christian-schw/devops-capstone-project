@@ -108,14 +108,15 @@ Course Provider: IBM<br>
 
 ## Information about the Project
 ### General
+TODO: Update General Section after completion of project
 - Client: Myself
-- Project Goal: TODO: XXXXX
+- Project Goal: Demonstrate the knowledge gained in the IBM Program “DevOps and Software Engineering” with a Capstone Project.
 - Number of Project Participants: 1 (Cloned repository of IBM. Developed the rest on my own)
 - Time Period: December, 2024
-- Industry / Area: DevOps
+- Industry / Area: DevOps, Software Engineering
 - Role: Developer
 - Languages: English
-- Result: TODO: XXXXXX
+- Result: XXX <!-- Successfully built an account microservice. Demonstrated skills and acquired new knowledge. -->
 <br>
 
 ### Tech Stack
