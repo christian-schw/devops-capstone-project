@@ -121,7 +121,7 @@ Course Provider: IBM<br>
 ### Tech Stack
 With regard to my role:<br>
 TODO: Update tech stack
-- GitHub
+- GitHub (Version Control, Kanban Board, Actions, ...)
 - XXX
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
