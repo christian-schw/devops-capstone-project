@@ -24,12 +24,12 @@
       </ul>
     </li>
     <li>
-      <a href="#what-i-have-done-as-part-of-the-project">What I have done as part of the project</a></li>
+      <a href="#what-i-have-done-as-part-of-the-project">What I have done as Part of the Project</a></li>
       <ul>
-        <li><a href="#task-1---create-and-execute-sprint-plans">Task 1 - Create and execute sprint plans</a></li>
+        <li><a href="#task-1---create-and-execute-sprint-plans">Task 1 - Create and execute Sprint Plans</a></li>
         <li><a href="#task-2---develop-a-restful-service-using-test-driven-development">Task 2 - Develop a RESTful Service using Test Driven Development</a></li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
-        <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the application to Kubernetes</a></li>
+        <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
         <li><a href="#task-5---build-an-automated-cd-devops-pipeline">Task 5 - Build an automated CD DevOps Pipeline</a></li>
       </ul>
     </li>
@@ -132,8 +132,8 @@ TODO: Update tech stack
 
 
 
-## What I have done as part of the project
-### Task 1 - Create and execute sprint plans
+## What I have done as Part of the Project
+### Task 1 - Create and execute Sprint Plans
 The RESTful microservice is created with the help of an agile plan (Scrum).<br>
 This means, the first task is the Sprint 0.<br>
 <br>
@@ -199,7 +199,7 @@ TODO: XXXX<br>
 <br>
 
 
-### Task 4 - Deploy the application to Kubernetes
+### Task 4 - Deploy the Application to Kubernetes
 TODO: XXXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
