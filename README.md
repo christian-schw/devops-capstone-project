@@ -174,7 +174,7 @@ P2 is the lowest priority and is therefore listed at the bottom.<br>
 The following was also assigned to the issues at the end:
 - An iteration field "Sprint" which has a duration of 1 week. At this point, the date is 14/12/2024. This means that the 1st sprint starts on 14/12/2024 and ends on 20/12/2024.
 - The size and estimated story points were also determined. The scale (provided by IBM) is 3, 5, 8, 13 = S, M, L, XL.
-<br>
+
 The issues were moved from the product backlog to the sprint backlog and the result is as follows:<br>
 
 ![planning-kanban-done](https://github.com/user-attachments/assets/c25154e1-6da6-4fd2-b55f-c18f23680953)
