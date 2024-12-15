@@ -291,7 +291,20 @@ At the same time, the next user story was defined: List all accounts from servic
 
 ### Implementing API Endpoint - List all Accounts
 Following the TDD approach, the test cases to be fulfilled were defined first:<br>
-TODO: XXX<br>
+
+![13 implement test for list all accounts](https://github.com/user-attachments/assets/95e8eb2e-42d1-4605-a0a0-d6b552812ed9)
+
+The code was then written to fulfill the tests.<br>
+The code coverage is more than 95%.<br>
+This means that everything fits.<br>
+
+![14 implement list all accounts](https://github.com/user-attachments/assets/998d8047-63cc-44bc-a940-4a95b80cb22b)
+
+The Kanban Board has been updated:<br>
+
+![15 user story complete list all accounts](https://github.com/user-attachments/assets/f92097f1-f687-453a-a916-a81648ee9b3c)
+
+As an additional task, the total code coverage is being improved.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
