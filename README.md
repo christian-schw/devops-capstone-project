@@ -125,7 +125,9 @@ TODO: Update General Section after completion of project
 With regard to my role:<br>
 TODO: Update tech stack
 - GitHub (Version Control, Kanban Board, Actions, ...)
-- XXX
+- Programming Language: Python
+- Python Webframework: Flask
+- Python Unittest Framework: nose
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
