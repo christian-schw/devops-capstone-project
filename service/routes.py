@@ -66,16 +66,15 @@ def list_all_accounts():
     """ List all accounts """
     app.logger.info("Request to list all accounts")
     account_list = Account.all()
+    app.logger.info("[%s] accounts found.", len(account_list))
 
     if len(account_list) == 0:
-        app.logger.info("No accounts found.")
         # No error status code, because it is not an error
         # if nothing specific was searched for
         # and nothing was found in an empty database.
         response_status = status.HTTP_200_OK
         message = account_list
     else:
-        app.logger.info("Accounts found.")
         response_status = status.HTTP_200_OK
         message = [account.serialize() for account in account_list]
     
