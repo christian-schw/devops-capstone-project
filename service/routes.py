@@ -9,6 +9,7 @@ from service.models import Account
 from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
 
+HEADER_CONTENT_TYPE = "application/json"
 
 ############################################################
 # Health Endpoint
@@ -45,7 +46,7 @@ def create_accounts():
     This endpoint will create an Account based the data in the body that is posted
     """
     app.logger.info("Request to create an Account")
-    check_content_type("application/json")
+    check_content_type(HEADER_CONTENT_TYPE)
     account = Account()
     account.deserialize(request.get_json())
     account.create()
@@ -89,8 +90,7 @@ def read_account(account_id: int):
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
 
-# ... place you code here to UPDATE an account ...
-
+# ... place you code here to DELETE an account ...
 
 ######################################################################
 # DELETE AN ACCOUNT

@@ -174,3 +174,22 @@ class TestAccountService(TestCase):
         updated_data = {}
         response = self.client.put(f"{BASE_URL}/{invalid_account_id}", json=updated_data)
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_update_account_bad_request(self):
+        """It should not Update an Account when sending the wrong data"""
+        invalid_account_id = 0
+        response = self.client.put(
+            f"{BASE_URL}/{invalid_account_id}",
+            json={"name": "not enough data"}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_update_account_unsupported_media_type(self):
+        """It should not Update an Account when sending the wrong media type"""
+        account = AccountFactory()
+        response = self.client.put(
+            f"{BASE_URL}/{account.id}",
+            json=account.serialize(),
+            content_type="test/html"
+        )
+        self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
