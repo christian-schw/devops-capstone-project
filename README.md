@@ -302,7 +302,7 @@ This means that everything fits.<br>
 
 The Kanban Board has been updated:<br>
 
-![15 user story complete list all accounts](https://github.com/user-attachments/assets/f92097f1-f687-453a-a916-a81648ee9b3c)
+![15 user story complete list all accounts](https://github.com/user-attachments/assets/d86a2e37-ea34-4d2b-a5c5-5604176accd7)
 
 As an additional task, the total code coverage is being improved.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
