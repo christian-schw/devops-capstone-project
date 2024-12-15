@@ -272,7 +272,19 @@ At the same time, the next user story was defined: Delete an account from servic
 
 ### Implementing API Endpoint - Delete an Account
 Following the TDD approach, the test cases to be fulfilled were defined first:<br>
-TODO: XXX<br>
+
+![10 implement test for delete an account](https://github.com/user-attachments/assets/b42db249-da20-481d-b4bd-d44c04c12062)
+
+The code was then written to fulfill the tests.<br>
+The code coverage is more than 95%.<br>
+This means that everything fits.<br>
+
+![11 implement delete an account](https://github.com/user-attachments/assets/1f3cb5e7-bfb5-4093-88ca-ef689a4d0978)
+
+At the same time, the next user story was defined: List all accounts from service (see column "In Progress"):<br>
+
+![12 user story complete and next user story list all accounts](https://github.com/user-attachments/assets/6fa33993-7914-4c2e-baeb-5ac1b10cb2a6)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
