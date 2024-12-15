@@ -37,6 +37,7 @@
             <li><a href="#implementing-api-endpoint---delete-an-account">Implementing API Endpoint - Delete an Account</a></li>
             <li><a href="#implementing-api-endpoint---list-all-accounts">Implementing API Endpoint - List all Accounts</a></li>
             <li><a href="#improve-total-code-coverage">Improve Total Code Coverage</a></li>
+            <li><a href="#demonstration-of-the-rest-api">Demonstration of the REST API</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -314,6 +315,21 @@ There is a lot of potential for improvement in some areas (e.g. error_handlers.p
 
 ![16 improve code coverage error handlers potencial](https://github.com/user-attachments/assets/a53dd76a-02b1-42f5-9fe8-969ec653103e)
 
+A new test file was created to test the error handlers: tests/test_error_handlers.py.<br>
+The test suite for error handlers was set up (setup and teardown) and the unit tests were written:<br>
+
+![17 create error handler py and implement unit tests](https://github.com/user-attachments/assets/8b2dfc10-1e93-4b2c-879a-3200876e2f94)
+
+The goal was achieved: The total code coverage is now above 95 %.<br>
+
+![18 total code coverage above 95 percent](https://github.com/user-attachments/assets/b8a1945c-753e-46c4-8106-14d839ced6c0)
+
+Now comes the last step of the task: Demonstrating the REST API.<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Demonstration of the REST API
+The curl command is used to make REST calls to the implemented endpoints.<br>
 TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
