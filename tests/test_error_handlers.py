@@ -74,3 +74,13 @@ class TestFlaskErrorHandler(TestCase):
         # that doesn't support that HTTP method.
         response = self.client.delete(f"{BASE_URL}")
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def test_mediatype_not_supported(self):
+        """It should handle unsupported media"""
+        # To cause this use different type than allowed by HTTP method.
+        response = self.client.post(
+            BASE_URL,
+            json={},
+            content_type="test/html"
+        )
+        self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
