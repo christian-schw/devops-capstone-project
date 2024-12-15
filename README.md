@@ -348,6 +348,9 @@ The terminal output:<br>
 
 The application is started using the "Launch Application" function in the IBM Cloud IDE.<br>
 A port number is also required to start the application.<br>
+
+![19 5 launch application in ide](https://github.com/user-attachments/assets/79199f9e-5c85-46dc-8160-46f615fb96fb)
+
 According to the terminal, the application listens to port 5000, so port 5000 is entered / required.<br>
 The output:<br>
 
