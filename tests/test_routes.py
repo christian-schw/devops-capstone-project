@@ -136,3 +136,9 @@ class TestAccountService(TestCase):
         self.assertEqual(read_account["address"], account.address)
         self.assertEqual(read_account["phone_numer"], account.phone_number)
         self.assertEqual(read_account["date_joined"], account.date_joined)
+
+    def test_read_product_no_found(self):
+        """It should return error status when no product could be read"""
+        invalid_product_id = 0
+        response = self.client.get(f"{BASE_URL}/{invalid_product_id}")
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
