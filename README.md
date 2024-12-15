@@ -32,6 +32,7 @@
           <ul>
             <li><a href="#rest-api-guidelines">REST API Guidelines</a></li>
             <li><a href="#set-up-the-development-environment">Set up the Development Environment</a></li>
+            <li><a href="#implementing-api-endpoint---read-an-account">Implementing API Endpoint - Read an Account</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -198,6 +199,7 @@ In this task, the REST API is expanded to include additional endpoints.<br>
 First, an overview of the API guidelines.<br>
 Development is based on these.<br>
 
+
 ### REST API Guidelines
 The REST API guidelines were specified by IBM:<br>
 
@@ -205,9 +207,25 @@ The REST API guidelines were specified by IBM:<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Set up the Development Environment
-TODO: XXXX<br>
 
+### Set up the Development Environment
+Something is missing in the set-up of the development environment: Configuring the nosetests command with additional options.<br>
+This will save us typing work when carrying out unit tests in the future.<br>
+<br>
+The modified setup.cfg file:<br>
+
+![2 setup dev environment nosetests](https://github.com/user-attachments/assets/2587d53b-6283-463f-acec-094a47f74304)
+
+This completes the user story for setting up the development environment and the Kanban board is updated:<br>
+
+![3 user story complete and next user story read an account](https://github.com/user-attachments/assets/0c58ef13-3c0d-41f3-9d47-b931633d8151)
+
+At the same time, the next user story was defined: Read an account from service (see column "In Progress").<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Implementing API Endpoint - Read an Account
+TODO: XXXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
