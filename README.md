@@ -33,6 +33,7 @@
             <li><a href="#rest-api-guidelines">REST API Guidelines</a></li>
             <li><a href="#set-up-the-development-environment">Set up the Development Environment</a></li>
             <li><a href="#implementing-api-endpoint---read-an-account">Implementing API Endpoint - Read an Account</a></li>
+            <li><a href="#implementing-api-endpoint---update-an-account">Implementing API Endpoint - Update an Account</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -196,6 +197,11 @@ Task 1 is finished. Task 2 can be started.<br>
 
 ### Task 2 - Develop a RESTful Service using Test Driven Development
 In this task, the REST API is expanded to include additional endpoints.<br>
+<br>
+Test Driven Development is used in this project.<br>
+This means that the tests are always written first and then the actual code that is to fulfill the tests.<br>
+The following rule applies: Code coverage must be at least 95 %.<br>
+<br>
 First, an overview of the API guidelines.<br>
 Development is based on these.<br>
 
@@ -225,7 +231,26 @@ At the same time, the next user story was defined: Read an account from service 
 
 
 ### Implementing API Endpoint - Read an Account
-TODO: XXXX<br>
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![4 implement test for read an account](https://github.com/user-attachments/assets/d023a22e-d09e-4d29-bd13-7944d0335152)
+
+The code was then written to fulfill the tests.<br>
+The code coverage is more than 95%.<br>
+This means that everything fits.<br>
+
+![5 implement read an account function](https://github.com/user-attachments/assets/6c7acbc9-0895-403d-b9fd-47ae88579864)
+
+At the same time, the next user story was defined: Update an account from service (see column "In Progress"):<br>
+
+![6 user story complete and next user story update an account](https://github.com/user-attachments/assets/f1d03679-5e86-457d-9714-40a99e7e6d44)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Implementing API Endpoint - Update an Account
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
