@@ -34,6 +34,7 @@
             <li><a href="#set-up-the-development-environment">Set up the Development Environment</a></li>
             <li><a href="#implementing-api-endpoint---read-an-account">Implementing API Endpoint - Read an Account</a></li>
             <li><a href="#implementing-api-endpoint---update-an-account">Implementing API Endpoint - Update an Account</a></li>
+            <li><a href="#implementing-api-endpoint---delete-an-account">Implementing API Endpoint - Delete an Account</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -249,6 +250,26 @@ At the same time, the next user story was defined: Update an account from servic
 
 
 ### Implementing API Endpoint - Update an Account
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![7 part 1 implement test for update an account](https://github.com/user-attachments/assets/a7197e1a-b82e-492f-a8bb-7b8f3a08e838)
+
+![7 part 2 implement test for update an account](https://github.com/user-attachments/assets/4aff4c7a-fc18-464f-a98a-20f77199df76)
+
+The code was then written to fulfill the tests.<br>
+The code coverage is more than 95%.<br>
+This means that everything fits.<br>
+
+![8 implement update an account function](https://github.com/user-attachments/assets/64b422a2-c5e6-423f-973e-614daadc71e3)
+
+At the same time, the next user story was defined: Delete an account from service (see column "In Progress"):<br>
+
+![update-accounts](https://github.com/user-attachments/assets/cca9c156-b74d-44e0-abd0-37d558f24081)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Implementing API Endpoint - Delete an Account
 Following the TDD approach, the test cases to be fulfilled were defined first:<br>
 TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
