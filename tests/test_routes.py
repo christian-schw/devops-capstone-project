@@ -193,3 +193,22 @@ class TestAccountService(TestCase):
             content_type="test/html"
         )
         self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
+
+    def test_delete_account(self):
+        """Delete: It should Delete an Account"""
+        account = self._create_accounts(1)[0]
+        response = self.client.delete(
+            f"{BASE_URL}/{account.id}"
+        )
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        # Data of response as text.
+        # Otherwise, it returns 'b""' and not just '""'.
+        self.assertEqual(response.get_data(as_text=True), "")
+        self.assertEqual(Account.find(account.id), None)
+        self.assertEqual(len(Account.all()), 0)
+    
+    def test_delete_account_not_found(self):
+        """Delete: It should return error status when no account could be found"""
+        invalid_account_id = 0
+        response = self.client.delete(f"{BASE_URL}/{invalid_account_id}")
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
