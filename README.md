@@ -353,8 +353,59 @@ The output:<br>
 
 ![20 start service with new database application](https://github.com/user-attachments/assets/7b555cc9-4129-47ba-8351-83f17ddc3a17)
 
+The service is now running.<br>
 The curl command is used to make REST calls to the implemented endpoints.<br>
-TODO: XXX<br>
+<br>
+The demonstration of "Create an Account" endpoint using the following command:<br>
+
+```
+curl -i -X POST http://127.0.0.1:5000/accounts \
+-H "Content-Type: application/json" \
+-d '{"name":"John Doe","email":"john@doe.com","address":"123 Main St.","phone_number":"555-1212"}'
+```
+
+![21 demo create an account terminal](https://github.com/user-attachments/assets/321f47f8-2856-45cf-9c82-33d229f53998)
+
+The demonstration of "List all Accounts" endpoint using the following command:<br>
+
+```
+curl -i -X GET http://127.0.0.1:5000/accounts
+```
+
+![22 demo list all accounts terminal](https://github.com/user-attachments/assets/f82ccc3a-f4ee-4a3a-ae41-b8d7f8e91bf5)
+
+The demonstration of "Read an Account" endpoint using the following command:<br>
+
+```
+curl -i -X GET http://127.0.0.1:5000/accounts/1
+```
+
+![23 demo read an account terminal](https://github.com/user-attachments/assets/164e5ba8-9f67-4cee-b026-90a6f0dc817c)
+
+The demonstration of "Update an Account" endpoint using the following command:<br>
+
+```
+curl -i -X PUT http://127.0.0.1:5000/accounts/1 \
+-H "Content-Type: application/json" \
+-d '{"name":"John Doe","email":"john@doe.com","address":"123 Main St.","phone_number":"555-1111"}'
+```
+
+![24 demo update an account terminal](https://github.com/user-attachments/assets/4e50c627-2395-4a99-93c5-b4b319dbf5bb)
+
+The difference: The phone number ends now with a 1 instead of 2 (555-1112 -> 555-1111).<br>
+<br>
+The demonstration of "Delete an Account" endpoint using the following command:<br>
+
+```
+curl -i -X DELETE http://127.0.0.1:5000/accounts/1
+```
+
+![25 demo delete an account terminal](https://github.com/user-attachments/assets/04f3b818-42a1-47cb-8315-2ffdf6d36aea)
+
+After deletion, all accounts were displayed to show that the account had actually been deleted.<br>
+The list is empty, so the account has been deleted.<br>
+<br>
+The REST API has been completed and the next task can now be started: Task 3 - Add Continuous Integration and Security to the Repository.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
