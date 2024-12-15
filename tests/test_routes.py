@@ -135,7 +135,7 @@ class TestAccountService(TestCase):
         self.assertEqual(read_account["email"], account.email)
         self.assertEqual(read_account["address"], account.address)
         self.assertEqual(read_account["phone_number"], account.phone_number)
-        self.assertEqual(read_account["date_joined"], account.date_joined)
+        self.assertEqual(read_account["date_joined"], str(account.date_joined))
 
     def test_read_product_no_found(self):
         """It should return error status when no product could be read"""
