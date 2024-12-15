@@ -56,3 +56,9 @@ class TestFlaskErrorHandler(TestCase):
         response = self.client.delete(f"{BASE_URL}")
         self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
 
+    def test_not_found(self):
+        """It should handle resources not found"""
+        # Common causes: Mistyped URLs or pages that are moved or deleted
+        # without redirection
+        response = self.client.get("/accjsadasounts")  # This URL looks good to me
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
