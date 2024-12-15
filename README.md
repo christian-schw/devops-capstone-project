@@ -346,7 +346,9 @@ The terminal output:<br>
 
 ![19 start service with new database terminal](https://github.com/user-attachments/assets/cc025051-cdad-4842-9eba-7cab41f66309)
 
-The application is started using the “Launch Application” function in the IBM Cloud IDE. Port 5000 is entered / required.<br>
+The application is started using the "Launch Application" function in the IBM Cloud IDE.<br>
+A port number is also required to start the application.<br>
+According to the terminal, the application listens to port 5000, so port 5000 is entered / required.<br>
 The output:<br>
 
 ![20 start service with new database application](https://github.com/user-attachments/assets/7b555cc9-4129-47ba-8351-83f17ddc3a17)
