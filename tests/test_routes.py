@@ -134,7 +134,7 @@ class TestAccountService(TestCase):
         self.assertEqual(read_account["name"], account.name)
         self.assertEqual(read_account["email"], account.email)
         self.assertEqual(read_account["address"], account.address)
-        self.assertEqual(read_account["phone_numer"], account.phone_number)
+        self.assertEqual(read_account["phone_number"], account.phone_number)
         self.assertEqual(read_account["date_joined"], account.date_joined)
 
     def test_read_product_no_found(self):
