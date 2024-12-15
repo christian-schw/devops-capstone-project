@@ -27,7 +27,13 @@
       <a href="#what-i-have-done-as-part-of-the-project">What I have done as Part of the Project</a></li>
       <ul>
         <li><a href="#task-1---create-and-execute-sprint-plans">Task 1 - Create and execute Sprint Plans</a></li>
-        <li><a href="#task-2---develop-a-restful-service-using-test-driven-development">Task 2 - Develop a RESTful Service using Test Driven Development</a></li>
+        <li>
+          <a href="#task-2---develop-a-restful-service-using-test-driven-development">Task 2 - Develop a RESTful Service using Test Driven Development</a>
+          <ul>
+            <li><a href="#rest-api-guidelines">REST API Guidelines</a></li>
+            <li><a href="#set-up-the-development-environment">Set up the Development Environment</a></li>
+          </ul>
+        </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
         <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
         <li><a href="#task-5---build-an-automated-cd-devops-pipeline">Task 5 - Build an automated CD DevOps Pipeline</a></li>
@@ -188,7 +194,20 @@ Task 1 is finished. Task 2 can be started.<br>
 
 
 ### Task 2 - Develop a RESTful Service using Test Driven Development
+In this task, the REST API is expanded to include additional endpoints.<br>
+First, an overview of the API guidelines.<br>
+Development is based on these.<br>
+
+### REST API Guidelines
+The REST API guidelines were specified by IBM:<br>
+
+![1 REST API Guidelines](https://github.com/user-attachments/assets/f249989a-8b4e-471d-9182-8f87adcf5319)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Set up the Development Environment
 TODO: XXXX<br>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
