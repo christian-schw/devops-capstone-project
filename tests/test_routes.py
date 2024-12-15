@@ -87,7 +87,7 @@ class TestAccountService(TestCase):
         self.assertEqual(data["status"], "OK")
 
     def test_create_account(self):
-        """It should Create a new Account"""
+        """Create: It should Create a new Account"""
         account = AccountFactory()
         response = self.client.post(
             BASE_URL,
@@ -109,12 +109,12 @@ class TestAccountService(TestCase):
         self.assertEqual(new_account["date_joined"], str(account.date_joined))
 
     def test_bad_request(self):
-        """It should not Create an Account when sending the wrong data"""
+        """Create: It should not Create an Account when sending the wrong data"""
         response = self.client.post(BASE_URL, json={"name": "not enough data"})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_unsupported_media_type(self):
-        """It should not Create an Account when sending the wrong media type"""
+        """Create: It should not Create an Account when sending the wrong media type"""
         account = AccountFactory()
         response = self.client.post(
             BASE_URL,
@@ -124,7 +124,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_415_UNSUPPORTED_MEDIA_TYPE)
 
     def test_read_an_account(self):
-        """It should Read an Account"""
+        """Read: It should Read an Account"""
         account = self._create_accounts(1)[0]
         response = self.client.get(f"{BASE_URL}/{account.id}")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -144,7 +144,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_update_an_account(self):
-        """It should Update an Account"""
+        """Update: It should Update an Account"""
         account = self._create_accounts(1)[0]
         updated_data = {
             "name": "Test Update Account",
@@ -176,7 +176,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
     def test_update_account_bad_request(self):
-        """It should not Update an Account when sending the wrong data"""
+        """Update: It should not Update an Account when sending the wrong data"""
         account = self._create_accounts(1)[0]
         response = self.client.put(
             f"{BASE_URL}/{account.id}",
@@ -185,7 +185,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_update_account_unsupported_media_type(self):
-        """It should not Update an Account when sending the wrong media type"""
+        """Update: It should not Update an Account when sending the wrong media type"""
         account = AccountFactory()
         response = self.client.put(
             f"{BASE_URL}/{account.id}",
