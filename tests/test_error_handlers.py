@@ -55,12 +55,11 @@ class TestFlaskErrorHandler(TestCase):
         response = self.client.post(BASE_URL, json={"name": 45252})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-    def test_method_not_allowed(self):
-        """It should not allow an illegal method call"""
-        # To cause this error use a HTTP method on an endpoint
-        # that doesn't support that HTTP method.
-        response = self.client.delete(f"{BASE_URL}")
-        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+    def test_bad_request(self):
+        """It should handle bad requests"""
+        # Just use wrong data in json
+        response = self.client.post(BASE_URL, json={"name": 45252})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)  
 
     def test_not_found(self):
         """It should handle resources not found"""
@@ -68,3 +67,10 @@ class TestFlaskErrorHandler(TestCase):
         # without redirection
         response = self.client.get("/accjsadasounts")  # This URL looks good to me
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_method_not_allowed(self):
+        """It should not allow an illegal method call"""
+        # To cause this error use a HTTP method on an endpoint
+        # that doesn't support that HTTP method.
+        response = self.client.delete(f"{BASE_URL}")
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
