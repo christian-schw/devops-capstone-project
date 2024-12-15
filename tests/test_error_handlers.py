@@ -49,6 +49,12 @@ class TestFlaskErrorHandler(TestCase):
     ######################################################################
     # E R R O R   H A N D L E R   T E S T   C A S E S
     ######################################################################
+    def test_request_validation_error(self):
+        """It should handle value errors from bad data"""
+        # Just use wrong data in json
+        response = self.client.post(BASE_URL, json={"name": 45252})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
     def test_method_not_allowed(self):
         """It should not allow an illegal method call"""
         # To cause this error use a HTTP method on an endpoint
