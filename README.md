@@ -36,7 +36,7 @@
             <li><a href="#implementing-api-endpoint---update-an-account">Implementing API Endpoint - Update an Account</a></li>
             <li><a href="#implementing-api-endpoint---delete-an-account">Implementing API Endpoint - Delete an Account</a></li>
             <li><a href="#implementing-api-endpoint---list-all-accounts">Implementing API Endpoint - List all Accounts</a></li>
-            <li><a href="#improve-code-coverage">Improve Code Coverage</a></li>
+            <li><a href="#improve-total-code-coverage">Improve Total Code Coverage</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -295,7 +295,7 @@ TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-### Improve Code Coverage
+### Improve Total Code Coverage
 The total code coverage is currently below 95 %.<br>
 There is a lot of potential for improvement in some areas (e.g. error_handlers.py file):<br>
 
