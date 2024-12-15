@@ -104,6 +104,10 @@ TODO: Insert preview images. Use at least 1 image from each section<br>
 
 ![planning-kanban-done](https://github.com/user-attachments/assets/c25154e1-6da6-4fd2-b55f-c18f23680953)
 
+![17 create error handler py and implement unit tests](https://github.com/user-attachments/assets/983e8d11-0ea4-4e4a-a14a-9069fb954a04)
+
+![21 demo create an account terminal](https://github.com/user-attachments/assets/20641e33-7061-4679-99b7-8fcf95e04dd3)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
@@ -137,6 +141,7 @@ TODO: Update General Section after completion of project
 With regard to my role:<br>
 TODO: Update tech stack
 - GitHub (Version Control, Kanban Board, Actions, ...)
+- IBM Cloud IDE (based on Theia and Container)
 - Programming Language: Python
 - Python Webframework: Flask
 - Python Unittest Framework: nose
