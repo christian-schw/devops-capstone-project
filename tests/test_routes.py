@@ -177,9 +177,9 @@ class TestAccountService(TestCase):
 
     def test_update_account_bad_request(self):
         """It should not Update an Account when sending the wrong data"""
-        invalid_account_id = 0
+        account = self._create_accounts(1)[0]
         response = self.client.put(
-            f"{BASE_URL}/{invalid_account_id}",
+            f"{BASE_URL}/{account.id}",
             json={"name": "not enough data"}
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
