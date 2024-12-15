@@ -35,6 +35,7 @@
             <li><a href="#implementing-api-endpoint---read-an-account">Implementing API Endpoint - Read an Account</a></li>
             <li><a href="#implementing-api-endpoint---update-an-account">Implementing API Endpoint - Update an Account</a></li>
             <li><a href="#implementing-api-endpoint---delete-an-account">Implementing API Endpoint - Delete an Account</a></li>
+            <li><a href="#implementing-api-endpoint---list-all-accounts">Implementing API Endpoint - List all Accounts</a></li>
           </ul>
         </li>
         <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
@@ -270,6 +271,12 @@ At the same time, the next user story was defined: Delete an account from servic
 
 
 ### Implementing API Endpoint - Delete an Account
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+TODO: XXX<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Implementing API Endpoint - List all Accounts
 Following the TDD approach, the test cases to be fulfilled were defined first:<br>
 TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
