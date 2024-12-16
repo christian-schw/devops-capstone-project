@@ -11,6 +11,7 @@ from . import app  # Import Flask application
 
 HEADER_CONTENT_TYPE = "application/json"
 
+
 ############################################################
 # Health Endpoint
 ############################################################
@@ -58,6 +59,7 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
@@ -77,7 +79,7 @@ def list_all_accounts():
     else:
         response_status = status.HTTP_200_OK
         message = [account.serialize() for account in account_list]
-    
+
     return jsonify(message), response_status
 
 
@@ -136,7 +138,7 @@ def update_account(account_id: int):
 def delete_account(account_id: int):
     """ Delete an account depending on supplied ID """
     app.logger.info("Request to delete an account")
-    
+
     account = Account.find(account_id)
 
     if account is None:
