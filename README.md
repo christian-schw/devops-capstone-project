@@ -578,7 +578,32 @@ After the security headers have been added:<br>
 The options such as X-Frame-Options or Content-Security-Policy are included - everything works as intended.<br>
 The status code is 302 FOUND instead of 200 OK, as the curl command searches for HTTP by default but finds / redirects to HTTPS (see Location in header).<br>
 <br>
-TODO: At the end -> Before After of output Flask Talisman<br>
+Now the second part of the security user story: Adding CORS policies.<br>
+<br>
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![15 implement tests cors policies header](https://github.com/user-attachments/assets/f7bf6cc8-74c6-4758-9272-6cd6569635b5)
+
+To fulfill the tests, Flask CORS dependency was installed and a CORS instance was created after the Flask app instantiation.<br>
+The result: All tests were successful:<br>
+
+![16 implement cors policies tests successful](https://github.com/user-attachments/assets/a1946b7f-a4d8-43aa-915f-0bebb0529db1)
+
+We can test the CORS policies with the following command:<br>
+
+```
+curl -I localhost:5000
+```
+
+The CORS policy is now also displayed (see red marking):<br>
+
+![17 output after adding Flask CORS](https://github.com/user-attachments/assets/4914d865-5d36-498c-8473-1bfe8a9d2bbe)
+
+The Security user story in the Kanban Board is moved to the "Done" column:<br>
+
+![18 updated kanban board moved security user story](https://github.com/user-attachments/assets/dd005a41-6bd3-4e8d-a93d-97c2d8c458ed)
+
+This ends Sprint 2 and we can start with the next task (Deploy the Application to Kubernetes).<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
