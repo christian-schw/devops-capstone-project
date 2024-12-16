@@ -550,6 +550,34 @@ Following the TDD approach, the test cases to be fulfilled were defined first:<b
 Regarding the options / values of the headers:<br>
 More information can be found in the Flask documentation or here: https://github.com/GoogleCloudPlatform/flask-talisman<br>
 <br>
+To fulfill the tests, Flask Talisman dependency was installed and a Talisman instance was created after the Flask app instantiation.<br>
+The result is that all our previous tests fail... at least our newly written security unit test works ;-)<br>
+
+![12 adding Talisman tests failed](https://github.com/user-attachments/assets/e410976c-0a4e-4a76-b2a5-b899e059335d)
+
+The reason for the failure is that Talisman enforces HTTPS - this is good in the production system, but not in testing, as HTTP is used here.<br>
+Therefore, the HTTPS enforcement is switched off in the test_XXXX.py files.<br>
+As a result, all our tests work again (including the newly written security unit test):<br>
+
+![13 disable https when testing](https://github.com/user-attachments/assets/078a2ce8-56eb-4243-8713-c315abc989e1)
+
+We can test the security headers with the following command:<br>
+
+```
+curl -I localhost:5000
+```
+
+Before the security headers were added:<br>
+
+![10 output before adding Flask Talisman security headers](https://github.com/user-attachments/assets/56597257-5b1a-4151-8af0-44dc4a973a08)
+
+After the security headers have been added:<br>
+
+![14 output after adding Flask Talisman security headers](https://github.com/user-attachments/assets/c0a2dbd4-75d1-47e9-8c49-356e798ff073)
+
+The options such as X-Frame-Options or Content-Security-Policy are included - everything works as intended.<br>
+The status code is 302 FOUND instead of 200 OK, as the curl command searches for HTTP by default but finds / redirects to HTTPS (see Location in header).<br>
+<br>
 TODO: At the end -> Before After of output Flask Talisman<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
