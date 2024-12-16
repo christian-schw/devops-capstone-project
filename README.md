@@ -2,6 +2,9 @@
 <a id="readme-top"></a>
 
 # Capstone Project - DevOps and Software Engineering
+Reflection of the build status:
+![Build Status](https://github.com/christian-schw/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+
 <!-- TABLE OF CONTENTS -->
 <details open>
   <summary>Table of Contents</summary>
