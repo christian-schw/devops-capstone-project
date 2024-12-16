@@ -536,7 +536,18 @@ Time to implement the next user story.<br>
 
 
 ### Implementing Security Headers and CORS Policies
-TODO: XXX<br>
+The next step is to increase the security of the microservice.<br>
+<br>
+First, security headers are implemented with the help of Flask Talisman.<br>
+Flask Talisman forces the REST API clients to use the HTTPS protocol.<br>
+<br>
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![11 part 1 implement tests security header](https://github.com/user-attachments/assets/118bf3c4-e873-4ab8-87e9-0837ea84ce75)
+
+![11 part 2 implement tests security header](https://github.com/user-attachments/assets/6486970e-76e3-49c9-b46a-1b65291f62b1)
+
+TODO: At the end -> Before After of output Flask Talisman<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
