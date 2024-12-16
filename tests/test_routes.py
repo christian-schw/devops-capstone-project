@@ -19,6 +19,10 @@ DATABASE_URI = os.getenv(
 
 BASE_URL = "/accounts"
 
+# To get the Flask test client to use https with the environ_overrides attribute.
+# When making an URL call, pass environ_overrides=HTTPS_ENVIRON
+HTTPS_ENVIRON = {'wsgi.url_scheme': 'https'}
+
 
 ######################################################################
 #  T E S T   C A S E S
@@ -85,6 +89,19 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, 200)
         data = resp.get_json()
         self.assertEqual(data["status"], "OK")
+    
+    def test_security_header(self):
+        """Security: The header should contain security information"""
+        response = self.client.get("/", environ_overrides=HTTPS_ENVIRON)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        headers = {
+            'X-Frame-Options': 'SAMEORIGIN',
+            'X-Content-Type-Options': 'nosniff',
+            'Content-Security-Policy': 'default-src \'self\'; object-src \'none\'',
+                        'Referrer-Policy': 'strict-origin-when-cross-origin'
+        }
+        for key, value in headers.items():
+            self.assertEqual(response.headers.get(key), value)
 
     def test_create_account(self):
         """Create: It should Create a new Account"""
