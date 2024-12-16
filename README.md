@@ -219,6 +219,9 @@ The following rule applies: Code coverage must be at least 95 %.<br>
 <br>
 First, an overview of the API guidelines.<br>
 Development is based on these.<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### REST API Guidelines
