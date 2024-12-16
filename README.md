@@ -110,7 +110,7 @@ Tasks that need to be completed:
 ### Preview Images
 Preview images of the project:<br>
 <br>
-TODO: Insert preview images. Use at least 1 image from each section<br>
+TODO: Insert preview images. Use at least 1 image from each section.<br>
 
 ![planning-kanban-done](https://github.com/user-attachments/assets/c25154e1-6da6-4fd2-b55f-c18f23680953)
 
