@@ -85,7 +85,7 @@ Reflection of the build status:<br>
 
 
 ## Introduction
-This capstone project / repository was created as part of IBM's "DevOps and Software Engineering" program.<br>
+This capstone project / repository was created as part of IBM's `DevOps and Software Engineering` program.<br>
 A template was used - see IBM repository: https://github.com/ibm-developer-skills-network/aolwx-devops-capstone-template.<br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -94,20 +94,25 @@ A template was used - see IBM repository: https://github.com/ibm-developer-skill
 
 
 ### Scenario
-You have been asked by the customer account manager at your company to develop an account microservice to keep track of the customers on your e-commerce website.<br>
-Since it is a microservice, it is expected to have a well-formed REST API that other microservices can call.<br>
-This service initially needs to create, read, update, delete, and list customers.<br>
-<br>
-You have also been told that someone else has started on this task.<br>
-They have already developed the database model and a Python Flask-based REST API with an endpoint to create a customer account.<br>
-<br>
+```
+You have been asked by the customer account manager at your company to
+develop an account microservice to keep track of the customers
+on your e-commerce website. Since it is a microservice, it is expected
+to have a well-formed REST API that other microservices can call.
+This service initially needs to create, read, update, delete,
+and list customers.
+
+You have also been told that someone else has started on this task.
+They have already developed the database model and a Python
+Flask-based REST API with an endpoint to create a customer account.
+
 Tasks that need to be completed:
 - Create and execute sprint plans
 - Develop a RESTful Service using Test Driven Development (TDD)
 - Add Continuous Integration (CI) and Security to the Repository
 - Deploy the application to Kubernetes
 - Build an automated CD DevOps Pipeline
-
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
@@ -127,6 +132,8 @@ TODO: Insert preview images. Use at least 1 image from each section.<br>
 ![5 part 1 implementing ci build yaml](https://github.com/user-attachments/assets/1d81de8a-2ee4-45f9-ba64-ab6bfeca1cfe)
 
 ![6 failed build - linting flake8](https://github.com/user-attachments/assets/5030173a-5b92-42ff-acca-2dbb407595fe)
+
+![17 output after adding Flask CORS](https://github.com/user-attachments/assets/cf33236c-db81-4b42-befd-f1bd80216adb)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
@@ -148,7 +155,7 @@ Course Provider: IBM<br>
 ### General
 TODO: Update General Section after completion of project
 - Client: Myself
-- Project Goal: Demonstrate the knowledge gained in the IBM Program “DevOps and Software Engineering” with a Capstone Project.
+- Project Goal: Demonstrate the knowledge gained in the IBM Program `DevOps and Software Engineering` with a Capstone Project.
 - Number of Project Participants: 1 (Cloned repository of IBM. Developed the rest on my own)
 - Time Period: December, 2024
 - Industry / Area: DevOps, Software Engineering
@@ -166,6 +173,8 @@ TODO: Update tech stack
 - Python Webframework: Flask
 - Python Unittest Framework: nose
 - Python Linting: Flake8
+- Containerization: Docker
+- Container Orchestration: Kubernetes / OpenShift
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
@@ -179,7 +188,7 @@ This means, the first task is the Sprint 0.<br>
 <br>
 The main goal of Sprint 0 is to set up the team for future delivery by creating the basic project skeleton, defining the vision and preparing the product backlog.<br>
 <br>
-First, a user story template was created (can be found in: .github/ISSUE_TEMPLATE):<br>
+First, a user story template was created (can be found in: `.github/ISSUE_TEMPLATE`):<br>
 
 ![planning-storytemplate-done](https://github.com/user-attachments/assets/0e30e5a5-c3f7-4cfd-8ecf-ac187585454e)
 
@@ -188,17 +197,17 @@ It uses the Gherkin Syntax.<br>
 Gherkin is a simple description language with very few rules for the structured formulation of scenarios in the context of behavior-driven software development according to BDD principles.<br>
 <br>
 Next, the user stories were created.<br>
-The titles were provided by IBM as part of the project (e.g. "Update an account in the service") and I filled them with content.<br>
+The titles were provided by IBM as part of the project (e.g. `Update an account in the service`) and I filled them with content.<br>
 Two examples (Note: Screenshots were taken later, therefore they are already labeled and assigned to a project):<br>
 
 ![Issue Update an account in the service](https://github.com/user-attachments/assets/720a2d0c-ae14-4fc8-bbe1-4bdb22893df4)
 
 ![Issue Containerize microservice using docker](https://github.com/user-attachments/assets/34ad0d12-b211-4876-90c5-f9d2e94912ef)
 
-The acceptance criteria define the status of "Done".<br>
+The acceptance criteria define the status of `Done`.<br>
 <br>
 After the user stories were completed, a GitHub project (Kanban board) was created.<br>
-All issues were assigned to the "New Issues" column:<br>
+All issues were assigned to the `New Issues` column:<br>
 
 ![planning-userstories-done](https://github.com/user-attachments/assets/4f044fb0-be53-48a6-8c76-629379606fc5)
 
@@ -212,7 +221,7 @@ P2 is the lowest priority and is therefore listed at the bottom.<br>
 ![planning-labels-done](https://github.com/user-attachments/assets/47682d10-bf71-46ca-9d49-7948e675ef11)
 
 The following was also assigned to the issues at the end:
-- An iteration field "Sprint" which has a duration of 1 week. At this point, the date is 14/12/2024. This means that the 1st sprint starts on 14/12/2024 and ends on 20/12/2024.
+- An iteration field `Sprint` which has a duration of 1 week. At this point, the date is 14/12/2024. This means that the 1st sprint starts on 14/12/2024 and ends on 20/12/2024.
 - The size and estimated story points were also determined. The scale (provided by IBM) is 3, 5, 8, 13 = S, M, L, XL.
 
 The issues were moved from the product backlog to the sprint backlog and the result is as follows:<br>
@@ -253,7 +262,7 @@ The REST API guidelines were specified by IBM:<br>
 Something is missing in the set-up of the development environment: Configuring the nosetests command with additional options.<br>
 This will save us typing work when carrying out unit tests in the future.<br>
 <br>
-The modified setup.cfg file:<br>
+The modified `setup.cfg` file:<br>
 
 ![2 setup dev environment nosetests](https://github.com/user-attachments/assets/2587d53b-6283-463f-acec-094a47f74304)
 
@@ -261,7 +270,7 @@ This completes the user story for setting up the development environment and the
 
 ![3 user story complete and next user story read an account](https://github.com/user-attachments/assets/0c58ef13-3c0d-41f3-9d47-b931633d8151)
 
-At the same time, the next user story was defined: Read an account from service (see column "In Progress").<br>
+At the same time, the next user story was defined: Read an account from service (see column `In Progress`).<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
@@ -278,7 +287,7 @@ This means that everything fits.<br>
 
 ![5 implement read an account function](https://github.com/user-attachments/assets/6c7acbc9-0895-403d-b9fd-47ae88579864)
 
-At the same time, the next user story was defined: Update an account from service (see column "In Progress"):<br>
+At the same time, the next user story was defined: Update an account from service (see column `In Progress`):<br>
 
 ![6 user story complete and next user story update an account](https://github.com/user-attachments/assets/f1d03679-5e86-457d-9714-40a99e7e6d44)
 
@@ -300,7 +309,7 @@ This means that everything fits.<br>
 
 ![8 implement update an account function](https://github.com/user-attachments/assets/64b422a2-c5e6-423f-973e-614daadc71e3)
 
-At the same time, the next user story was defined: Delete an account from service (see column "In Progress"):<br>
+At the same time, the next user story was defined: Delete an account from service (see column `In Progress`):<br>
 
 ![update-accounts](https://github.com/user-attachments/assets/cca9c156-b74d-44e0-abd0-37d558f24081)
 
@@ -320,7 +329,7 @@ This means that everything fits.<br>
 
 ![11 implement delete an account](https://github.com/user-attachments/assets/1f3cb5e7-bfb5-4093-88ca-ef689a4d0978)
 
-At the same time, the next user story was defined: List all accounts from service (see column "In Progress"):<br>
+At the same time, the next user story was defined: List all accounts from service (see column `In Progress`):<br>
 
 ![12 user story complete and next user story list all accounts](https://github.com/user-attachments/assets/6fa33993-7914-4c2e-baeb-5ac1b10cb2a6)
 
@@ -352,11 +361,11 @@ As an additional task, the total code coverage is being improved.<br>
 
 ### Improve Total Code Coverage
 The total code coverage is currently below 95 %.<br>
-There is a lot of potential for improvement in some areas (e.g. error_handlers.py file):<br>
+There is a lot of potential for improvement in some areas (e.g. `error_handlers.py` file):<br>
 
 ![16 improve code coverage error handlers potencial](https://github.com/user-attachments/assets/a53dd76a-02b1-42f5-9fe8-969ec653103e)
 
-A new test file was created to test the error handlers: tests/test_error_handlers.py.<br>
+A new test file was created to test the error handlers: `tests/test_error_handlers.py`.<br>
 The test suite for error handlers was set up (setup and teardown) and the unit tests were written:<br>
 
 ![17 create error handler py and implement unit tests](https://github.com/user-attachments/assets/8b2dfc10-1e93-4b2c-879a-3200876e2f94)
@@ -388,7 +397,7 @@ The terminal output:<br>
 
 ![19 start service with new database terminal](https://github.com/user-attachments/assets/cc025051-cdad-4842-9eba-7cab41f66309)
 
-The application is started using the "Launch Application" function in the IBM Cloud IDE.<br>
+The application is started using the `Launch Application` function in the IBM Cloud IDE.<br>
 A port number is also required to start the application.<br>
 
 ![19 5 launch application in ide](https://github.com/user-attachments/assets/79199f9e-5c85-46dc-8160-46f615fb96fb)
@@ -401,7 +410,7 @@ The output:<br>
 The service is now running.<br>
 The curl command is used to make REST calls to the implemented endpoints.<br>
 <br>
-The demonstration of "Create an Account" endpoint using the following command:<br>
+The demonstration of `Create an Account` endpoint using the following command:<br>
 
 ```
 curl -i -X POST http://127.0.0.1:5000/accounts \
@@ -411,7 +420,7 @@ curl -i -X POST http://127.0.0.1:5000/accounts \
 
 ![21 demo create an account terminal](https://github.com/user-attachments/assets/321f47f8-2856-45cf-9c82-33d229f53998)
 
-The demonstration of "List all Accounts" endpoint using the following command:<br>
+The demonstration of `List all Accounts` endpoint using the following command:<br>
 
 ```
 curl -i -X GET http://127.0.0.1:5000/accounts
@@ -419,7 +428,7 @@ curl -i -X GET http://127.0.0.1:5000/accounts
 
 ![22 demo list all accounts terminal](https://github.com/user-attachments/assets/f82ccc3a-f4ee-4a3a-ae41-b8d7f8e91bf5)
 
-The demonstration of "Read an Account" endpoint using the following command:<br>
+The demonstration of `Read an Account` endpoint using the following command:<br>
 
 ```
 curl -i -X GET http://127.0.0.1:5000/accounts/1
@@ -427,7 +436,7 @@ curl -i -X GET http://127.0.0.1:5000/accounts/1
 
 ![23 demo read an account terminal](https://github.com/user-attachments/assets/164e5ba8-9f67-4cee-b026-90a6f0dc817c)
 
-The demonstration of "Update an Account" endpoint using the following command:<br>
+The demonstration of `Update an Account` endpoint using the following command:<br>
 
 ```
 curl -i -X PUT http://127.0.0.1:5000/accounts/1 \
@@ -437,9 +446,9 @@ curl -i -X PUT http://127.0.0.1:5000/accounts/1 \
 
 ![24 demo update an account terminal](https://github.com/user-attachments/assets/4e50c627-2395-4a99-93c5-b4b319dbf5bb)
 
-The difference: The phone number ends now with a 1 instead of 2 (555-1112 -> 555-1111).<br>
+The difference: The phone number ends now with a `1` instead of `2` (`555-1112` -> `555-1111`).<br>
 <br>
-The demonstration of "Delete an Account" endpoint using the following command:<br>
+The demonstration of `Delete an Account` endpoint using the following command:<br>
 
 ```
 curl -i -X DELETE http://127.0.0.1:5000/accounts/1
@@ -503,22 +512,22 @@ These stories are now being implemented.<br>
 A key practice in DevOps is Continuous Integration (CI), where developers continuously integrate their code into the main branch by making frequent pull requests.<br>
 To make life easier for developers, a CI pipeline is now being implemented with the help of GitHub Actions.<br>
 <br>
-I assign the user story in the Kanban board to myself and move it to the "In Progress" column:<br>
+I assign the user story in the Kanban board to myself and move it to the `In Progress` column:<br>
 
 ![4 CI in Progress Kanban Board and assign to myself](https://github.com/user-attachments/assets/a6531cc4-8f29-417b-9a47-90959430ebf5)
 
-The implemented YAML file (.github/workflows/ci-build.yaml) for the Github Actions workflow:<br>
+The implemented YAML file (`.github/workflows/ci-build.yaml`) for the Github Actions workflow:<br>
 
 ![5 part 1 implementing ci build yaml](https://github.com/user-attachments/assets/93a920c6-cb85-4862-89c5-7814955c8faa)
 
 ![5 part 2 implementing ci build yaml](https://github.com/user-attachments/assets/c6ef03a5-1b1f-4f2b-b935-46a9860d8fcf)
 
-Once the workflow has been implemented, the results are visible on Github under the "Actions" tab.<br>
+Once the workflow has been implemented, the results are visible on Github under the `Actions` tab.<br>
 Here it shows that the build failed because I did not complete my Python linting:<br>
 
 ![6 failed build - linting flake8](https://github.com/user-attachments/assets/8b3d7a88-e146-41c1-8757-82b7fcfe36eb)
 
-Part of the CI user story is also the addition of a badge in the README.md, which shows the build status.<br>
+Part of the CI user story is also the addition of a badge in the `README.md`, which shows the build status.<br>
 This also indicates that the build has failed:<br>
 
 ![6 part 2 failed build badge readme md](https://github.com/user-attachments/assets/d6f211db-db2b-4bd1-9a4a-d23b20a35e0b)
@@ -530,7 +539,7 @@ After I fixed the linting problems, the CI workflow I created also works:<br>
 ![7 part 2 passing build bage readme md](https://github.com/user-attachments/assets/f518bee9-f6de-4561-9c80-54fe82422f59)
 
 This completes all the acceptance criteria of the CI user story and the Kanban board can be updated.<br>
-The CI user story was moved to the "Done" column and at the same time the next user story ("Need to Add Security Headers and CORS Policies") was moved to the "In Progress" column:<br>
+The CI user story was moved to the `Done` column and at the same time the next user story (Need to Add Security Headers and CORS Policies) was moved to the `In Progress` column:<br>
 
 ![9 move security user story to in progress](https://github.com/user-attachments/assets/42cee458-f14a-4468-be7d-1f1c12474fd3)
 
@@ -561,7 +570,7 @@ The result is that all our previous tests fail... at least our newly written sec
 ![12 adding Talisman tests failed](https://github.com/user-attachments/assets/e410976c-0a4e-4a76-b2a5-b899e059335d)
 
 The reason for the failure is that Talisman enforces HTTPS - this is good in the production system, but not in testing, as HTTP is used here.<br>
-Therefore, the HTTPS enforcement is switched off in the test_XXXX.py files.<br>
+Therefore, the HTTPS enforcement is switched off in the `test_XXXX.py` files.<br>
 As a result, all our tests work again (including the newly written security unit test):<br>
 
 ![13 disable https when testing](https://github.com/user-attachments/assets/078a2ce8-56eb-4243-8713-c315abc989e1)
@@ -604,7 +613,7 @@ The CORS policy is now also displayed (see red marking):<br>
 
 ![17 output after adding Flask CORS](https://github.com/user-attachments/assets/4914d865-5d36-498c-8473-1bfe8a9d2bbe)
 
-The Security user story in the Kanban Board is moved to the "Done" column:<br>
+The Security user story in the Kanban Board is moved to the `Done` column:<br>
 
 ![18 updated kanban board moved security user story](https://github.com/user-attachments/assets/dd005a41-6bd3-4e8d-a93d-97c2d8c458ed)
 
