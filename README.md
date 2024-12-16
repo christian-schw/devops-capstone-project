@@ -52,7 +52,12 @@ Reflection of the build status:<br>
             <li><a href="#implementing-security-headers-and-cors-policies">Implementing Security Headers and CORS Policies</a></li>
           </ul>
         </li>
-        <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
+        <li>
+          <a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a>
+          <ul>
+            <li><a href="#additional-scenario-and-planning-sprint-3">Additional Scenario and Planning Sprint 3</a></li>
+          </ul>
+        </li>
         <li><a href="#task-5---build-an-automated-cd-devops-pipeline">Task 5 - Build an automated CD DevOps Pipeline</a></li>
       </ul>
     </li>
@@ -610,7 +615,33 @@ This ends Sprint 2 and we can start with the next task (Deploy the Application t
 
 
 ### Task 4 - Deploy the Application to Kubernetes
-TODO: XXXX<br>
+### Additional Scenario and Planning Sprint 3
+In Task 4, a new scenario was added (defined by IBM):<br>
+
+```
+Management has been very pleased with the changes you have been making.
+It's now time to create a sprint plan to implement the last two stories in your Product Backlog,
+which are "Containerize your microservice using Docker" and "Deploy your Docker image to Kubernetes."
+
+One more thing. There is a new requirement.
+You did such a great job automating the CI pipeline with GitHub Actions that all of the
+developers seem much happier because of it. Management has decided that if a little automation
+is good, then more automation would be better. They would like you to automate the deployment
+to Kubernetes using Tekton once you have figured out how to do it manually.
+```
+
+One new user stories were created to fulfill the requirements.<br>
+The content was specified by IBM:<br>
+
+![1 new user story automate deployment](https://github.com/user-attachments/assets/e4f62a78-9e54-4def-81e5-d84d989afcf3)
+
+As Sprint 2 is complete, Sprint 3 is also planned. The newly created user story is added here.<br>
+<br>
+The updated Kanban Board / Sprint Plan 3:<br>
+
+![2 Updated Kanbanboard Sprint 3](https://github.com/user-attachments/assets/a531a5e2-742a-4aaa-a58f-358db5a7a088)
+
+These stories are now being implemented.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
