@@ -94,6 +94,8 @@ class TestAccountService(TestCase):
         """Security: The header should contain security information"""
         response = self.client.get("/", environ_overrides=HTTPS_ENVIRON)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # For more information about the options of headers:
+        # See Flask Talisman documentation
         headers = {
             'X-Frame-Options': 'SAMEORIGIN',
             'X-Content-Type-Options': 'nosniff',
