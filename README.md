@@ -49,6 +49,7 @@ Reflection of the build status:<br>
           <ul>
             <li><a href="#additional-scenario-and-planning-sprint-2">Additional Scenario and Planning Sprint 2</a></li>
             <li><a href="#implementing-continuous-integration-automation">Implementing Continuous Integration Automation</a></li>
+            <li><a href="#implementing-security-headers-and-cors-policies">Implementing Security Headers and CORS Policies</a></li>
           </ul>
         </li>
         <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
@@ -155,6 +156,7 @@ TODO: Update tech stack
 - Programming Language: Python
 - Python Webframework: Flask
 - Python Unittest Framework: nose
+- Python Linting: Flake8
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
@@ -496,6 +498,41 @@ I assign the user story in the Kanban board to myself and move it to the "In Pro
 
 ![4 CI in Progress Kanban Board and assign to myself](https://github.com/user-attachments/assets/a6531cc4-8f29-417b-9a47-90959430ebf5)
 
+The implemented YAML file (.github/workflows/ci-build.yaml) for the Github Actions workflow:<br>
+
+![5 part 1 implementing ci build yaml](https://github.com/user-attachments/assets/93a920c6-cb85-4862-89c5-7814955c8faa)
+
+![5 part 2 implementing ci build yaml](https://github.com/user-attachments/assets/c6ef03a5-1b1f-4f2b-b935-46a9860d8fcf)
+
+Once the workflow has been implemented, the results are visible on Github under the "Actions" tab.<br>
+Here it shows that the build failed because I did not complete my Python linting:<br>
+
+![6 failed build - linting flake8](https://github.com/user-attachments/assets/8b3d7a88-e146-41c1-8757-82b7fcfe36eb)
+
+Part of the CI user story is also the addition of a badge in the README.md, which shows the build status.<br>
+This also indicates that the build has failed:<br>
+
+![6 part 2 failed build badge readme md](https://github.com/user-attachments/assets/d6f211db-db2b-4bd1-9a4a-d23b20a35e0b)
+
+After I fixed the linting problems, the CI workflow I created also works:<br>
+
+![7 part 1 successful build](https://github.com/user-attachments/assets/fe3c7184-e108-4a46-b924-bce53dd9a4b8)
+
+![7 part 2 passing build bage readme md](https://github.com/user-attachments/assets/f518bee9-f6de-4561-9c80-54fe82422f59)
+
+This completes all the acceptance criteria of the CI user story and the Kanban board can be updated.<br>
+The CI user story was moved to the "Done" column and at the same time the next user story ("Need to Add Security Headers and CORS Policies") was moved to the "In Progress" column:<br>
+
+![9 move security user story to in progress](https://github.com/user-attachments/assets/42cee458-f14a-4468-be7d-1f1c12474fd3)
+
+Time to implement the next user story.<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
+
+
+### Implementing Security Headers and CORS Policies
+TODO: XXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
