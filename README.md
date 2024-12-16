@@ -40,7 +40,12 @@
             <li><a href="#demonstration-of-the-rest-api">Demonstration of the REST API</a></li>
           </ul>
         </li>
-        <li><a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a></li>
+        <li>
+          <a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a>
+          <ul>
+            <li><a href="#additional-scenario-and-planning-sprint-2">Additional Scenario and Planning Sprint 2</a></li>
+          </ul>
+        </li>
         <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
         <li><a href="#task-5---build-an-automated-cd-devops-pipeline">Task 5 - Build an automated CD DevOps Pipeline</a></li>
       </ul>
@@ -413,14 +418,50 @@ curl -i -X DELETE http://127.0.0.1:5000/accounts/1
 After deletion, all accounts were displayed to show that the account had actually been deleted.<br>
 The list is empty, so the account has been deleted.<br>
 <br>
-The REST API has been completed and the next task can now be started: Task 3 - Add Continuous Integration and Security to the Repository.<br>
+The REST API has been finished, Sprint 1 is now complete and the next task can now be started: Task 3 - Add Continuous Integration and Security to the Repository.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
 
 
 ### Task 3 - Add Continuous Integration and Security to the Repository
-TODO: XXXX<br>
+### Additional Scenario and Planning Sprint 2
+In Task 3, a new scenario was added (defined by IBM):<br>
+
+```
+Management has been looking for ways to increase developer productivity
+and has noticed that developers spend a lot of time checking
+that all the tests pass before approving each pull request.
+Management has decided it is time to automate this task
+by implementing continuous integration (CI) using GitHub Actions.
+
+There have also been many stories in the news about security breaches
+and exploits, and management is concerned about the security of your microservice.
+In an effort to be proactive, they have decided that you need to
+add defensive security measures to your microservice in the
+form of security headers and cross-origin resource sharing (CORS) policies.
+```
+
+Two new user stories were created to fulfill the requirements.<br>
+This time, these were specified by IBM.<br>
+As Sprint 1 is complete, Sprint 2 is also planned. The newly created user stories are added here.<br>
+<br>
+Note: And yes... the week of Sprint 1 hasn't actually passed ;-)<br>
+Currently on vacation from work, so lots of time. And I want to finish the project before Christmas (day I'm writing this: 16/12/2024).<br>
+<br>
+The first user story - Need the Ability to Automate Continuous Integration Checks:<br>
+
+![1 Feature CI Checks Issue](https://github.com/user-attachments/assets/7b6026c0-dffe-45b3-908e-f31c5318824a)
+
+The second user story - Need to Add Security Headers and CORS Policies:<br>
+
+![2 Feature Security Headers and CORS Issue](https://github.com/user-attachments/assets/48f34b0c-6dc2-4d98-a48f-b2798beff764)
+
+The updated Kanban Board / Sprint Plan 2:<br>
+
+![3 Sprint2 Plan](https://github.com/user-attachments/assets/84f61f86-1669-48ef-8935-fa3ef88496ac)
+
+These stories are now being implemented.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
