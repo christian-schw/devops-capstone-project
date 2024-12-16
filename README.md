@@ -488,7 +488,10 @@ These stories are now being implemented.<br>
 A key practice in DevOps is Continuous Integration (CI), where developers continuously integrate their code into the main branch by making frequent pull requests.<br>
 To make life easier for developers, a CI pipeline is now being implemented with the help of GitHub Actions.<br>
 <br>
-TODO: XXXXX
+I assign the user story in the Kanban board to myself and move it to the "In Progress" column:<br>
+
+![4 CI in Progress Kanban Board and assign to myself](https://github.com/user-attachments/assets/a6531cc4-8f29-417b-9a47-90959430ebf5)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
