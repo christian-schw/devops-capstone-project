@@ -547,6 +547,9 @@ Following the TDD approach, the test cases to be fulfilled were defined first:<b
 
 ![11 part 2 implement tests security header](https://github.com/user-attachments/assets/6486970e-76e3-49c9-b46a-1b65291f62b1)
 
+Regarding the options / values of the headers:<br>
+More information can be found in the Flask documentation or here: https://github.com/GoogleCloudPlatform/flask-talisman<br>
+<br>
 TODO: At the end -> Before After of output Flask Talisman<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
