@@ -12,7 +12,7 @@ from flask_talisman import Talisman
 
 # Create Flask application
 app = Flask(__name__)
-Talisman(app)
+talisman = Talisman(app)
 app.config.from_object(config)
 
 # Import the routes After the Flask app is created
