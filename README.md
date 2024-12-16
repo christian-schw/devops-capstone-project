@@ -44,6 +44,7 @@
           <a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a>
           <ul>
             <li><a href="#additional-scenario-and-planning-sprint-2">Additional Scenario and Planning Sprint 2</a></li>
+            <li><a href="#implementing-continuous-integration-automation">Implementing Continuous Integration Automation</a></li>
           </ul>
         </li>
         <li><a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a></li>
@@ -226,6 +227,8 @@ The REST API guidelines were specified by IBM:<br>
 ![1 REST API Guidelines](https://github.com/user-attachments/assets/f249989a-8b4e-471d-9182-8f87adcf5319)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Set up the Development Environment
@@ -242,6 +245,8 @@ This completes the user story for setting up the development environment and the
 
 At the same time, the next user story was defined: Read an account from service (see column "In Progress").<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Implementing API Endpoint - Read an Account
@@ -260,6 +265,8 @@ At the same time, the next user story was defined: Update an account from servic
 ![6 user story complete and next user story update an account](https://github.com/user-attachments/assets/f1d03679-5e86-457d-9714-40a99e7e6d44)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Implementing API Endpoint - Update an Account
@@ -280,6 +287,8 @@ At the same time, the next user story was defined: Delete an account from servic
 ![update-accounts](https://github.com/user-attachments/assets/cca9c156-b74d-44e0-abd0-37d558f24081)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Implementing API Endpoint - Delete an Account
@@ -298,6 +307,8 @@ At the same time, the next user story was defined: List all accounts from servic
 ![12 user story complete and next user story list all accounts](https://github.com/user-attachments/assets/6fa33993-7914-4c2e-baeb-5ac1b10cb2a6)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Implementing API Endpoint - List all Accounts
@@ -317,6 +328,8 @@ The Kanban Board has been updated:<br>
 
 As an additional task, the total code coverage is being improved.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
 
 
 ### Improve Total Code Coverage
@@ -336,7 +349,8 @@ The goal was achieved: The total code coverage is now above 95 %.<br>
 
 Now comes the last step of the task: Demonstrating the REST API.<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br>
+<br>
 
 ### Demonstration of the REST API
 First, local access to the service is enabled.<br>
@@ -462,6 +476,16 @@ The updated Kanban Board / Sprint Plan 2:<br>
 ![3 Sprint2 Plan](https://github.com/user-attachments/assets/84f61f86-1669-48ef-8935-fa3ef88496ac)
 
 These stories are now being implemented.<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
+
+
+### Implementing Continuous Integration Automation
+A key practice in DevOps is Continuous Integration (CI), where developers continuously integrate their code into the main branch by making frequent pull requests.<br>
+To make life easier for developers, a CI pipeline is now being implemented with the help of GitHub Actions.<br>
+<br>
+TODO: XXXXX
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
