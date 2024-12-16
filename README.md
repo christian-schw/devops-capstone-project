@@ -30,22 +30,22 @@ Reflection of the build status:<br>
     <li>
       <a href="#what-i-have-done-as-part-of-the-project">What I have done as Part of the Project</a></li>
       <ul>
-        <li><a href="#task-1---create-and-execute-sprint-plans">Task 1 - Create and execute Sprint Plans</a></li>
+        <li><a href="#task-1---creating-and-executing-sprint-plans">Task 1 - Creating and executing Sprint Plans</a></li>
         <li>
-          <a href="#task-2---develop-a-restful-service-using-test-driven-development">Task 2 - Develop a RESTful Service using Test Driven Development</a>
+          <a href="#task-2---developing-a-restful-service-using-test-driven-development">Task 2 - Developing a RESTful Service using Test Driven Development</a>
           <ul>
             <li><a href="#rest-api-guidelines">REST API Guidelines</a></li>
-            <li><a href="#set-up-the-development-environment">Set up the Development Environment</a></li>
+            <li><a href="#setting-up-the-development-environment">Setting up the Development Environment</a></li>
             <li><a href="#implementing-api-endpoint---read-an-account">Implementing API Endpoint - Read an Account</a></li>
             <li><a href="#implementing-api-endpoint---update-an-account">Implementing API Endpoint - Update an Account</a></li>
             <li><a href="#implementing-api-endpoint---delete-an-account">Implementing API Endpoint - Delete an Account</a></li>
             <li><a href="#implementing-api-endpoint---list-all-accounts">Implementing API Endpoint - List all Accounts</a></li>
-            <li><a href="#improve-total-code-coverage">Improve Total Code Coverage</a></li>
+            <li><a href="#improving-total-code-coverage">Improving Total Code Coverage</a></li>
             <li><a href="#demonstration-of-the-rest-api">Demonstration of the REST API</a></li>
           </ul>
         </li>
         <li>
-          <a href="#task-3---add-continuous-integration-and-security-to-the-repository">Task 3 - Add Continuous Integration and Security to the Repository</a>
+          <a href="#task-3---adding-continuous-integration-and-security-to-the-repository">Task 3 - Adding Continuous Integration and Security to the Repository</a>
           <ul>
             <li><a href="#additional-scenario-and-planning-sprint-2">Additional Scenario and Planning Sprint 2</a></li>
             <li><a href="#implementing-continuous-integration-automation">Implementing Continuous Integration Automation</a></li>
@@ -53,13 +53,14 @@ Reflection of the build status:<br>
           </ul>
         </li>
         <li>
-          <a href="#task-4---deploy-the-application-to-kubernetes">Task 4 - Deploy the Application to Kubernetes</a>
+          <a href="#task-4---deploying-the-application-to-kubernetes">Task 4 - Deploying the Application to Kubernetes</a>
           <ul>
             <li><a href="#additional-scenario-and-planning-sprint-3">Additional Scenario and Planning Sprint 3</a></li>
             <li><a href="#containerizing-the-microservice-using-docker">Containerizing the Microservice using Docker</a></li>
+            <li><a href="#deploying-to-kubernetes">Deploying to Kubernetes</a></li>
           </ul>
         </li>
-        <li><a href="#task-5---build-an-automated-cd-devops-pipeline">Task 5 - Build an automated CD DevOps Pipeline</a></li>
+        <li><a href="#task-5---building-an-automated-cd-devops-pipeline">Task 5 - Building an automated CD DevOps Pipeline</a></li>
       </ul>
     </li>
     <li>
@@ -69,7 +70,7 @@ Reflection of the build status:<br>
             <li>
                 <a href="#useful-commands">Useful Commands</a>
                 <ul>
-                    <li><a href="#activate-the-python-virtual-environment">Activate the Python Virtual Environment</a></li>
+                    <li><a href="#activating-the-python-virtual-environment">Activating the Python Virtual Environment</a></li>
                     <li><a href="#installing-python-dependencies">Installing Python Dependencies</a></li>
                     <li><a href="#starting-the-postgres-docker-container">Starting the Postgres Docker Container</a></li>
                 </ul>
@@ -183,7 +184,7 @@ TODO: Update tech stack
 
 
 ## What I have done as Part of the Project
-### Task 1 - Create and execute Sprint Plans
+### Task 1 - Creating and executing Sprint Plans
 The RESTful microservice is created with the help of an agile plan (Scrum).<br>
 This means, the first task is the Sprint 0.<br>
 <br>
@@ -235,7 +236,7 @@ Task 1 is finished. Task 2 can be started.<br>
 <br>
 
 
-### Task 2 - Develop a RESTful Service using Test Driven Development
+### Task 2 - Developing a RESTful Service using Test Driven Development
 In this task, the REST API is expanded to include additional endpoints.<br>
 <br>
 Test Driven Development is used in this project.<br>
@@ -259,7 +260,7 @@ The REST API guidelines were specified by IBM:<br>
 <br>
 
 
-### Set up the Development Environment
+### Setting up the Development Environment
 Something is missing in the set-up of the development environment: Configuring the nosetests command with additional options.<br>
 This will save us typing work when carrying out unit tests in the future.<br>
 <br>
@@ -360,7 +361,7 @@ As an additional task, the total code coverage is being improved.<br>
 <br>
 
 
-### Improve Total Code Coverage
+### Improving Total Code Coverage
 The total code coverage is currently below 95 %.<br>
 There is a lot of potential for improvement in some areas (e.g. `error_handlers.py` file):<br>
 
@@ -466,7 +467,7 @@ The REST API has been finished, Sprint 1 is now complete and the next task can n
 <br>
 
 
-### Task 3 - Add Continuous Integration and Security to the Repository
+### Task 3 - Adding Continuous Integration and Security to the Repository
 ### Additional Scenario and Planning Sprint 2
 In Task 3, a new scenario was added (defined by IBM):<br>
 
@@ -624,7 +625,7 @@ This ends Sprint 2 and we can start with the next task (Deploy the Application t
 <br>
 
 
-### Task 4 - Deploy the Application to Kubernetes
+### Task 4 - Deploying the Application to Kubernetes
 ### Additional Scenario and Planning Sprint 3
 In Task 4, a new scenario was added (defined by IBM):<br>
 
@@ -664,7 +665,15 @@ TODO: XXXX<br>
 <br>
 
 
-### Task 5 - Build an automated CD DevOps Pipeline
+### Deploying to Kubernetes
+TODO: XXXX<br>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<br>
+<br>
+
+
+
+### Task 5 - Building an automated CD DevOps Pipeline
 TODO: XXXX<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
@@ -696,7 +705,7 @@ After sourcing it, the prompt should look like this:<br>
 Under normal circumstances you should not have to run these commands.<br>
 They are performed automatically at setup but may be useful when things go wrong:<br>
 
-#### Activate the Python Virtual Environment
+#### Activating the Python Virtual Environment
 Activate the Python 3.9 environment with:<br>
 
 ```bash
