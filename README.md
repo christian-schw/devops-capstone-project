@@ -536,7 +536,74 @@ Time to implement the next user story.<br>
 
 
 ### Implementing Security Headers and CORS Policies
-TODO: XXX<br>
+The next step is to increase the security of the microservice.<br>
+<br>
+First, security headers are implemented with the help of Flask Talisman.<br>
+Flask Talisman forces the REST API clients to use the HTTPS protocol.<br>
+<br>
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![11 part 1 implement tests security header](https://github.com/user-attachments/assets/118bf3c4-e873-4ab8-87e9-0837ea84ce75)
+
+![11 part 2 implement tests security header](https://github.com/user-attachments/assets/6486970e-76e3-49c9-b46a-1b65291f62b1)
+
+Regarding the options / values of the headers:<br>
+More information can be found in the Flask documentation or here: https://github.com/GoogleCloudPlatform/flask-talisman<br>
+<br>
+To fulfill the tests, Flask Talisman dependency was installed and a Talisman instance was created after the Flask app instantiation.<br>
+The result is that all our previous tests fail... at least our newly written security unit test works ;-)<br>
+
+![12 adding Talisman tests failed](https://github.com/user-attachments/assets/e410976c-0a4e-4a76-b2a5-b899e059335d)
+
+The reason for the failure is that Talisman enforces HTTPS - this is good in the production system, but not in testing, as HTTP is used here.<br>
+Therefore, the HTTPS enforcement is switched off in the test_XXXX.py files.<br>
+As a result, all our tests work again (including the newly written security unit test):<br>
+
+![13 disable https when testing](https://github.com/user-attachments/assets/078a2ce8-56eb-4243-8713-c315abc989e1)
+
+We can test the security headers with the following command:<br>
+
+```
+curl -I localhost:5000
+```
+
+Before the security headers were added:<br>
+
+![10 output before adding Flask Talisman security headers](https://github.com/user-attachments/assets/56597257-5b1a-4151-8af0-44dc4a973a08)
+
+After the security headers have been added:<br>
+
+![14 output after adding Flask Talisman security headers](https://github.com/user-attachments/assets/c0a2dbd4-75d1-47e9-8c49-356e798ff073)
+
+The options such as X-Frame-Options or Content-Security-Policy are included - everything works as intended.<br>
+The status code is 302 FOUND instead of 200 OK, as the curl command searches for HTTP by default but finds / redirects to HTTPS (see Location in header).<br>
+<br>
+Now the second part of the security user story: Adding CORS policies.<br>
+<br>
+Following the TDD approach, the test cases to be fulfilled were defined first:<br>
+
+![15 implement tests cors policies header](https://github.com/user-attachments/assets/f7bf6cc8-74c6-4758-9272-6cd6569635b5)
+
+To fulfill the tests, Flask CORS dependency was installed and a CORS instance was created after the Flask app instantiation.<br>
+The result: All tests were successful:<br>
+
+![16 implement cors policies tests successful](https://github.com/user-attachments/assets/a1946b7f-a4d8-43aa-915f-0bebb0529db1)
+
+We can test the CORS policies with the following command:<br>
+
+```
+curl -I localhost:5000
+```
+
+The CORS policy is now also displayed (see red marking):<br>
+
+![17 output after adding Flask CORS](https://github.com/user-attachments/assets/4914d865-5d36-498c-8473-1bfe8a9d2bbe)
+
+The Security user story in the Kanban Board is moved to the "Done" column:<br>
+
+![18 updated kanban board moved security user story](https://github.com/user-attachments/assets/dd005a41-6bd3-4e8d-a93d-97c2d8c458ed)
+
+This ends Sprint 2 and we can start with the next task (Deploy the Application to Kubernetes).<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
