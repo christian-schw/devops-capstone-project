@@ -119,6 +119,10 @@ TODO: Insert preview images. Use at least 1 image from each section.<br>
 
 ![21 demo create an account terminal](https://github.com/user-attachments/assets/20641e33-7061-4679-99b7-8fcf95e04dd3)
 
+![5 part 1 implementing ci build yaml](https://github.com/user-attachments/assets/1d81de8a-2ee4-45f9-ba64-ab6bfeca1cfe)
+
+![6 failed build - linting flake8](https://github.com/user-attachments/assets/5030173a-5b92-42ff-acca-2dbb407595fe)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
