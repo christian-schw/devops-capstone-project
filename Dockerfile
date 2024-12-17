@@ -23,3 +23,6 @@ EXPOSE 8080
 # "JSON arguments recommended for CMD to prevent unintended behavior
 # related to OS signals" (JSON arguments is the exec form, see Docker doc).
 CMD ["gunicorn", "--bind=0.0.0.0:8080", "--log-level=info" , "service:app"]
+
+# OpenShift service / route URL to access microservice:
+# https://accounts-sn-labs-christians21.labs-prod-openshift-san-a45631dc5778dc6371c67d206ba9ae5c-0000.us-east.containers.appdomain.cloud/
