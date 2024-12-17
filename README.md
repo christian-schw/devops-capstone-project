@@ -861,7 +861,64 @@ The next user story can be implemented.<br>
 
 
 ### Task 5 - Building an automated CD DevOps Pipeline
-TODO: XXXX<br>
+The detailed view of the last user story:<br>
+
+![1 user story cd pipeline](https://github.com/user-attachments/assets/29640fa1-8e4c-4f02-bd48-1c105b9169a8)
+
+Here is an overview of the related tasks in the pipeline:<br>
+
+![2 overview of pipeline tasks](https://github.com/user-attachments/assets/1f34bde8-2db7-4e45-b9bf-e5ffd5aa8779)
+
+First, a storage / workspace (`PersistentVolumeClaim`, `PVC`) was set up for the pipeline and the pipeline itself with the following commands:<br>
+
+```
+oc create -f tekton/pvc.yaml
+oc apply -f tekton/tasks.yaml
+oc apply -f tekton/pipeline.yaml
+```
+
+Verification that everything has been created as intended:<br>
+
+![3 verifying tasks pvc and pipeline](https://github.com/user-attachments/assets/d4151c08-47f8-44b2-a89c-a2ca3d8ce4d9)
+
+Part of the pipeline has already been implemented. The following tasks:
+- init
+- clone
+
+See screenshot of `tekton/pipeline.yaml` below as well:<br>
+
+![4 initial pipeline tasks](https://github.com/user-attachments/assets/314fa9ed-60b6-46ef-836d-d57e3dd37e74)
+
+The task has already been defined in the pipeline: `git-clone`.<br>
+This does not have to be written in `tekton/tasks.yaml` itself, because a predefined task already exists in the Tekton Hub.<br>
+This is installed in the cluster with the following command:<br>
+
+```
+tkn hub install task git-clone
+```
+
+Verification of the installation of task `git-clone`:<br>
+
+![5 verifying installation git-clone](https://github.com/user-attachments/assets/aa1b9288-727b-4277-82b5-9962b3827919)
+
+The pipeline is now started in order to see the output.<br>
+The following command is used (use option -h for more information on passing the values for PVC etc.):<br>
+
+```
+tkn pipeline start cd-pipeline \
+    -p repo-url="https://github.com/christian-schw/devops-capstone-project.git" \
+    -p branch="main" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc \
+    -s pipeline \
+    --showlog
+```
+
+The result: the pipeline succeeded.<br>
+
+![6 starting pipeline and verifying succeeded](https://github.com/user-attachments/assets/1dccdb54-c27b-4c1e-a623-8023fb01ee1e)
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
