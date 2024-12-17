@@ -754,7 +754,8 @@ The updated Kanban board:<br>
 
 ### Deploying to Kubernetes
 Manifests / YAML files must be created for the user story `Deploy your Docker image to Kubernetes` so that the microservice can be deployed consistently.<br>
-For the time being, the microservice is deployed manually. It will be deployed automatically in `Task 5 - Building an automated CD DevOps Pipeline`.<br>
+For the time being, the microservice is deployed manually.<br>
+It will be deployed automatically in `Task 5 - Building an automated CD DevOps Pipeline`.<br>
 The manifests can then be reused.<br>
 <br>
 The PostgreSQL database is needed for the application.<br>
@@ -798,7 +799,7 @@ After applying the deployment to the cluster:<br>
 
 ![14 oc applying deployment yaml](https://github.com/user-attachments/assets/5e4f2a1f-42f8-4569-8946-c295fd64cce0)
 
-To acess postgres database, according to IBM the following environment variables are needed:
+To access the postgres database, according to IBM the following environment variables are needed:
 - DATABASE_HOST
 - DATABASE_NAME
 - DATABASE_USER
