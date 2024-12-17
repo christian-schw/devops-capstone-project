@@ -913,7 +913,7 @@ tkn pipeline start cd-pipeline \
     --showlog
 ```
 
-Use option -h for more information on passing the values for PVC etc..<br>
+Use option `-h` for more information on passing the values for PVC etc..<br>
 The value of branch can be exchanged for test purposes (e. g. `cd-pipeline` instead of `main`).<br>
 The result: the pipeline succeeded.<br>
 
@@ -951,6 +951,69 @@ After I fixed my linting problem, the pipeline works:<br>
 
 ![9 fixing linting and pipeline succeeded](https://github.com/user-attachments/assets/6a19cd4d-45dd-4c9d-afc7-d6907f51192a)
 
+The next task is `tests` with nose.<br>
+This time there is no predefined task in the Tekton Hub.<br>
+We have to create it ourselves.<br>
+The definition is in `tekton/tasks.yaml`. The implemented code:<br>
+
+![10 implementing task nosetests](https://github.com/user-attachments/assets/87bc60b6-fc38-4ae1-9ec3-9e064e9a9faf)
+
+The task was then added to the pipeline (`tekton/pipeline.yaml`):<br>
+
+![11 implementing pipeline task nosetests](https://github.com/user-attachments/assets/ccb21fc1-fcc6-4fd7-a8eb-5f9b57a30567)
+
+The two changes were then added to the cluster:<br>
+
+```
+oc apply -f tekton/tasks.yaml
+oc apply -f tekton/pipeline.yaml
+```
+
+Then start the pipeline again to see the results of the `tests` task:<br>
+
+```
+tkn pipeline start cd-pipeline \
+    -p repo-url="https://github.com/christian-schw/devops-capstone-project.git" \
+    -p branch="main" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc \
+    -s pipeline \
+    --showlog
+```
+
+![12 pipeline succeeded task nosetests](https://github.com/user-attachments/assets/5f9296bd-aab8-45fa-9d63-3eb96ffb53f0)
+
+Everything fits. Now the next task in the pipeline: `build`.<br>
+This is required to build the image.<br>
+There is a task for this in the Tekton Hub: `buildah`.<br>
+<br>
+It does not need to be installed separately as it has already been installed as a `ClusterTask`.<br>
+ClusterTasks are not only available to a single pipeline, but to several.<br>
+<br>
+With the command `tkn clustertask ls` you can see all ClusterTasks and the `buildah` task is listed:<br>
+
+![13 clustertask buildah](https://github.com/user-attachments/assets/75f8330b-5202-4187-ac91-d57037a4094c)
+
+The `build` task (with reference to `buildah`) was then integrated into the pipeline and the changes applied with command `oc apply -f tekton/pipeline.yaml`:<br>
+
+![14 part 1 implementing buildah task to pipeline](https://github.com/user-attachments/assets/49666199-b75b-4ef3-a17c-e435e55c62e3)
+
+![14 part 2 implementing buildah task to pipeline](https://github.com/user-attachments/assets/1fd9bc4d-9984-4493-b149-8bdb6d2a6a5e)
+
+Start the pipeline again - this time with an additional parameter: `build-image`:<br>
+
+```
+tkn pipeline start cd-pipeline \
+    -p repo-url="https://github.com/christian-schw/devops-capstone-project.git" \
+    -p branch="main" \
+    -p build-image="image-registry.openshift-image-registry.svc:5000/$SN_ICR_NAMESPACE/accounts:1" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc \
+    -s pipeline \
+    --showlog
+```
+
+Everything works:<br>
+
+![15 pipeline succeeded task buildah](https://github.com/user-attachments/assets/380ea541-c55e-4db6-9252-c9dd246b32df)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
