@@ -999,7 +999,7 @@ The `build` task (with reference to `buildah`) was then integrated into the pipe
 
 ![14 part 2 implementing buildah task to pipeline](https://github.com/user-attachments/assets/1fd9bc4d-9984-4493-b149-8bdb6d2a6a5e)
 
-Start the pipeline again - this time with an additional parameter: `build-image`:<br>
+Start the pipeline again - this time with an additional parameter (`build-image`):<br>
 
 ```
 tkn pipeline start cd-pipeline \
@@ -1015,6 +1015,40 @@ Everything works:<br>
 
 ![15 pipeline succeeded task buildah](https://github.com/user-attachments/assets/380ea541-c55e-4db6-9252-c9dd246b32df)
 
+Now comes the last task: `deploy`.<br>
+There is a task for this in the Tekton Hub: `openshift-client`.<br>
+It does not need to be installed separately as it has already been installed as a `ClusterTask`.<br>
+Command `tkn clustertask ls`:<br>
+
+![16 clustertask openshift-client](https://github.com/user-attachments/assets/cef9e1ea-69b6-464a-b65a-0cfc6634b195)
+
+The `deploy` task (with reference to `openshift-client`) was then integrated into the pipeline and the changes applied with command `oc apply -f tekton/pipeline.yaml`:<br>
+
+![17 implementing pipeline task deploy](https://github.com/user-attachments/assets/daa38367-4740-41bb-be95-bc0e507f151a)
+
+![17 part 2 implementing pipeline task deploy](https://github.com/user-attachments/assets/c15c81e6-3769-43d7-b4bb-a6e1bf212914)
+
+Start the pipeline again:<br>
+
+```
+tkn pipeline start cd-pipeline \
+    -p repo-url="https://github.com/christian-schw/devops-capstone-project.git" \
+    -p branch="main" \
+    -p build-image="image-registry.openshift-image-registry.svc:5000/$SN_ICR_NAMESPACE/accounts:1" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc \
+    -s pipeline \
+    --showlog
+```
+
+The logs:<br>
+
+![18 pipeline succeeded task deploy](https://github.com/user-attachments/assets/dc7251d9-750f-400e-b2e9-2e519c3ca7bb)
+
+The user story is complete, Sprint 3 is finished and the Kanban board has been updated:<br>
+
+![19 updated kanban board](https://github.com/user-attachments/assets/71e303ad-517b-40c0-8001-52cc54de997b)
+
+That completes the project. If you have read this far, thank you very much for your attention! :-)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
