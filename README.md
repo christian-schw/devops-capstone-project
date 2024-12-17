@@ -178,6 +178,7 @@ TODO: Update tech stack
 - Containerization: Docker
 - Container Orchestration: Kubernetes / OpenShift
 - Image Registry: IBM Cloud Container Registry
+- CI/CD Tool: Tekton
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
