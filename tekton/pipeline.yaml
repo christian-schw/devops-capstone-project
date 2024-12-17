@@ -40,7 +40,7 @@ spec:
     - name: lint
       workspaces:
         - name: source  # Must match defined YAML workspace name of flake8
-          workspace: pipeline-workspace          
+          workspace: pipeline-workspace
       taskRef:
         name: flake8
       params:
@@ -48,6 +48,20 @@ spec:
         value: python:3.9-slim
       - name: args
         value: ["--count", "--max-complexity=10", "--max-line-length=127", "--statistics"]
+      runAfter:
+        - clone
+
+    - name: tests
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+      taskRef:
+        name: tests
+      params:
+      - name: args
+        value: -v --with-spec --spec-color
+      - name: database_uri
+        value: sqlite:///test.db
       runAfter:
         - clone
 ...
