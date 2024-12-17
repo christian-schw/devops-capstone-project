@@ -19,4 +19,7 @@ USER theia
 
 # === Run service ===
 EXPOSE 8080
-CMD gunicorn --bind=0.0.0.0:8080 --log-level=info service:app
+# According to Docker Terminal: 
+# "JSON arguments recommended for CMD to prevent unintended behavior
+# related to OS signals" (JSON arguments is the exec form, see Docker doc).
+CMD ["gunicorn", "--bind=0.0.0.0:8080", "--log-level=info" , "service:app"]
