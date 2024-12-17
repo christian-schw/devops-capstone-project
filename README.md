@@ -122,8 +122,6 @@ Tasks that need to be completed:
 
 ### Preview Images
 Preview images of the project:<br>
-<br>
-TODO: Insert preview images. Use at least 1 image from each section.<br>
 
 ![planning-kanban-done](https://github.com/user-attachments/assets/c25154e1-6da6-4fd2-b55f-c18f23680953)
 
@@ -136,6 +134,10 @@ TODO: Insert preview images. Use at least 1 image from each section.<br>
 ![6 failed build - linting flake8](https://github.com/user-attachments/assets/5030173a-5b92-42ff-acca-2dbb407595fe)
 
 ![17 output after adding Flask CORS](https://github.com/user-attachments/assets/cf33236c-db81-4b42-befd-f1bd80216adb)
+
+![13 oc implementing ibm tip](https://github.com/user-attachments/assets/23cbf314-5b27-4d34-9666-e4b9f1aed1d3)
+
+![12 pipeline succeeded task nosetests](https://github.com/user-attachments/assets/a843103c-6296-40ce-806c-a00b4bbe7cf5)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
@@ -155,7 +157,6 @@ Course Provider: IBM<br>
 
 ## Information about the Project
 ### General
-TODO: Update General Section after completion of project
 - Client: Myself
 - Project Goal: Demonstrate the knowledge gained in the IBM Program `DevOps and Software Engineering` with a Capstone Project.
 - Number of Project Participants: 1 (Cloned repository of IBM. Developed the rest on my own)
@@ -163,12 +164,11 @@ TODO: Update General Section after completion of project
 - Industry / Area: DevOps, Software Engineering
 - Role: Developer
 - Languages: English
-- Result: XXX <!-- Successfully built an account microservice. Demonstrated skills and acquired new knowledge. -->
+- Result: Successfully built an account microservice. Demonstrated skills and acquired new knowledge.
 <br>
 
 ### Tech Stack
 With regard to my role:<br>
-TODO: Update tech stack
 - GitHub (Version Control, Kanban Board, Actions, ...)
 - IBM Cloud IDE (based on Theia and Container)
 - Programming Language: Python
