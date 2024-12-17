@@ -695,6 +695,58 @@ The output which looks good:<br>
 
 ![5 check docker images](https://github.com/user-attachments/assets/17e7adc5-4105-4c6b-8337-7e5511f64c62)
 
+A container was then created using the image with the following command:<br>
+
+```
+docker run --rm \
+    --link postgresql \
+    -e DATABASE_URI=postgresql://postgres:postgres@postgresql:5432/postgres \
+    -p 8080:8080 \
+    accounts
+```
+
+Explanation (see Docker documentation as well):<br>
+- `--rm` = Remove container when it exists
+- `--link postgresql` = Link to another container (for using PostgreSQL database)
+- `-e DATABASE_URI=postgresql://postgres:postgres@postgresql:5432/postgres` = Environment variable
+- `-p 8080:8080` = Publish container's port to host
+- `accounts` = Name of container image
+
+The application is started again using the `Launch Application` function from the IBM Cloud IDE.<br>
+The output:<br>
+
+![6 docker run and launch application](https://github.com/user-attachments/assets/a2ed57e3-f045-40ce-aad2-2a4a6ff1b0f9)
+
+![7 output application](https://github.com/user-attachments/assets/afc54626-2d93-438e-80d3-30044ca4d242)
+
+The image is then tagged and pushed to the IBM Cloud Registry with the following command:<br>
+
+```
+docker tag accounts us.icr.io/$SN_ICR_NAMESPACE/accounts:1
+docker push us.icr.io/$SN_ICR_NAMESPACE/accounts:1
+```
+
+`$SN_ICR_NAMESPACE` is an environment variable already predefined by IBM Cloud IDE and refers to my account:<br>
+
+![8 output env var NAMESPACE](https://github.com/user-attachments/assets/f926fd29-8516-4b84-9bc8-f7fa410f9b70)
+
+The push is then checked with the following command:<br>
+
+```
+ibmcloud cr images
+```
+
+The output:<br>
+
+![9 check ibmcloud container registry](https://github.com/user-attachments/assets/3e79db11-5918-4962-bcbc-2cc918a03b00)
+
+The image is there and so everything fits.<br>
+<br>
+The user story (`Containerize microservice using Docker`) is now fully implemented and the next user story (`Deploy your Docker image to Kubernetes`) can be tackled.<br>
+The updated Kanban board:<br>
+
+![10 move user stories after finishing containerizing](https://github.com/user-attachments/assets/6cf6a10f-9e8e-41dd-9723-38ced1ffc1d0)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
