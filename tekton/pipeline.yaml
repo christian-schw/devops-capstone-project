@@ -15,6 +15,7 @@ spec:
     - name: repo-url
     - name: branch
       default: main
+    - name: build-image
   tasks:
     - name: init
       workspaces:
@@ -64,4 +65,20 @@ spec:
         value: sqlite:///test.db
       runAfter:
         - clone
+
+    - name: build
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+      taskRef:
+        name: buildah
+        # According to Tekton Doc: ClusterTasks are deprecated and ClusterResolver should be used instead.
+        # However, as required in the project, ClusterTask is still used.
+        kind: ClusterTask
+      params:
+      - name: IMAGE
+        value: $(params.build-image)
+      runAfter:
+        - lint
+        - tests
 ...
