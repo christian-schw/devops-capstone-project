@@ -93,7 +93,7 @@ class TestAccountService(TestCase):
         self.assertEqual(resp.status_code, 200)
         data = resp.get_json()
         self.assertEqual(data["status"], "OK")
-    
+
     def test_security_header(self):
         """Security: The header should contain security information"""
         response = self.client.get("/", environ_overrides=HTTPS_ENVIRON)
@@ -235,7 +235,7 @@ class TestAccountService(TestCase):
         self.assertEqual(response.get_data(as_text=True), "")
         self.assertEqual(Account.find(account.id), None)
         self.assertEqual(len(Account.all()), 0)
-    
+
     def test_delete_account_not_found(self):
         """Delete: It should return error status when no account could be found"""
         invalid_account_id = 0
@@ -254,9 +254,9 @@ class TestAccountService(TestCase):
     def test_list_all_accounts_no_products_found(self):
         """List: It should return success status when no account could be found"""
         """
-        Note: It is deliberately programmed so that no error code (e.g. 404) 
+        Note: It is deliberately programmed so that no error code (e.g. 404)
           is sent, but a success code!
-          It is not an error if nothing specific was searched for 
+          It is not an error if nothing specific was searched for
           and nothing was found in an empty database.
         """
         response = self.client.get(f"{BASE_URL}")
