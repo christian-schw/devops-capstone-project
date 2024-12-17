@@ -659,7 +659,25 @@ These stories are now being implemented.<br>
 
 
 ### Containerizing the Microservice using Docker
-TODO: XXXX<br>
+The user story `Containerize microservice using Docker` was moved to the `Progress` column and assigned to me.<br>
+The updated Kanban board:<br>
+
+![3 assign container user story to myself and progress column](https://github.com/user-attachments/assets/40dbe165-c6c1-4ee6-82f4-da2a44b80031)
+
+An image is required to create a container.<br>
+And to create an image, a Dockerfile is required.<br>
+Therefore, the Dockerfile is implemented first:<br>
+
+![4 Create Dockerfile](https://github.com/user-attachments/assets/3b1028e0-2520-4d2f-8756-9dfae3fc7a96)
+
+I would not have thought of certain commands and they were specified by IBM.<br>
+These include the use of the option `--no-cache-dir` and the following lines, for example:<br>
+
+```
+RUN useradd --uid 1000 theia && chown -R theia /app
+USER theia
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
