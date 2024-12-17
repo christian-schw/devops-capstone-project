@@ -902,7 +902,7 @@ Verification of the installation of task `git-clone`:<br>
 ![5 verifying installation git-clone](https://github.com/user-attachments/assets/aa1b9288-727b-4277-82b5-9962b3827919)
 
 The pipeline is now started in order to see the output.<br>
-The following command is used (use option -h for more information on passing the values for PVC etc.):<br>
+The following command is used:<br>
 
 ```
 tkn pipeline start cd-pipeline \
@@ -913,10 +913,43 @@ tkn pipeline start cd-pipeline \
     --showlog
 ```
 
+Use option -h for more information on passing the values for PVC etc..<br>
+The value of branch can be exchanged for test purposes (e. g. `cd-pipeline` instead of `main`).<br>
 The result: the pipeline succeeded.<br>
 
 ![6 starting pipeline and verifying succeeded](https://github.com/user-attachments/assets/1dccdb54-c27b-4c1e-a623-8023fb01ee1e)
 
+The next task is `lint` with Flake8.<br>
+This does not have to be written in `tekton/tasks.yaml` itself, because a predefined task already exists in the Tekton Hub.<br>
+This is installed in the cluster with the following command:<br>
+
+```
+tkn hub install task flake8
+```
+
+Verification of the installation of task `flake8`:<br>
+
+![7 verifying installation flake8 task](https://github.com/user-attachments/assets/4c5629c4-ad65-4fc0-b031-79c119dac26d)
+
+The task is built into `tekton/pipeline.yaml`, applied with the command `oc apply -f tekton/pipeline.yaml` and the pipeline is restarted with the following command:
+
+```
+tkn pipeline start cd-pipeline \
+    -p repo-url="https://github.com/christian-schw/devops-capstone-project.git" \
+    -p branch="main" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc \
+    -s pipeline \
+    --showlog
+```
+
+The logs:<br>
+
+![8 implementing lint and failed linting](https://github.com/user-attachments/assets/403f7288-7a11-4c45-8cdd-8629fb8b4ae7)
+
+As you can see, the pipeline failed because I didn't do my linting correctly...<br>
+After I fixed my linting problem, the pipeline works:<br>
+
+![9 fixing linting and pipeline succeeded](https://github.com/user-attachments/assets/6a19cd4d-45dd-4c9d-afc7-d6907f51192a)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
