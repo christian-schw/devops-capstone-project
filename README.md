@@ -753,7 +753,106 @@ The updated Kanban board:<br>
 
 
 ### Deploying to Kubernetes
-TODO: XXXX<br>
+Manifests / YAML files must be created for the user story `Deploy your Docker image to Kubernetes` so that the microservice can be deployed consistently.<br>
+For the time being, the microservice is deployed manually.<br>
+It will be deployed automatically in `Task 5 - Building an automated CD DevOps Pipeline`.<br>
+The manifests can then be reused.<br>
+<br>
+The PostgreSQL database is needed for the application.<br>
+OpenShift provides a number of templates for creating services.<br>
+IBM has already predefined the template (file `postgresql-ephemeral-template.json`).<br>
+<br>
+The resources are created and deployed using the template with the following commands:<br>
+
+```
+oc create -f postgresql-ephemeral-template.json
+oc new-app postgresql-ephemeral
+```
+
+With the command `oc get all` we can see that the Postgres service is running:<br>
+
+![11 create postgres ephemeral and pod is running](https://github.com/user-attachments/assets/aaec18fd-5d16-40c8-a5b1-49f99cef7546)
+
+The manifests / YAML files can now be created.<br>
+IBM provides the tip that you can write the definition of the deployment in a YAML file with the help of the flags `--dry-run-client` (= ensures that nothing is actually created) and `--output=yaml`.<br>
+IBM also specifies that the image created earlier should be used in the IBM Cloud Registry and three replicas.<br>
+<br>
+I found more information with the `--help` command:<br>
+
+![12 oc --help tip from ibm](https://github.com/user-attachments/assets/43aa9fd1-5990-48ec-9f6c-b13327dbb20f)
+
+The resulting command:<br>
+
+```
+oc create deployment accounts \
+    --dry-run=client \
+    --output=yaml > deploy/deployment.yaml \
+    --image=us.icr.io/sn-labs-christians21/accounts:1 \
+    --replicas=3
+```
+
+The output / YAML-file (`deploy/deployment.yaml`):<br>
+
+![13 oc implementing ibm tip](https://github.com/user-attachments/assets/f414e5e4-8aaa-480f-9ebd-510aba17b880)
+
+After applying the deployment to the cluster:<br>
+
+![14 oc applying deployment yaml](https://github.com/user-attachments/assets/5e4f2a1f-42f8-4569-8946-c295fd64cce0)
+
+To access the postgres database, according to IBM the following environment variables are needed:
+- DATABASE_HOST
+- DATABASE_NAME
+- DATABASE_USER
+- DATABASE_PASSWORD
+
+A secret for Postgres was also created using the service template.<br>
+It contains the names of the variables that are inserted into `deployment.yaml` as environment variables.<br>
+The command `oc describe secret postgresql` was used to get the information.<br>
+The result:<br>
+
+![14 oc implementing env vars secret](https://github.com/user-attachments/assets/6f11594a-e847-4e08-8398-7806e247f271)
+
+The file `deployment.yaml` was then applied to the cluster again with the command `oc create -f deploy/deployment.yaml`.<br>
+<br>
+A service object was created in order to be able to use the service from outside.<br>
+Here, the definition was also written with a command in a YAML file. The command:<br>
+
+```
+oc expose deploy accounts \
+   --dry-run=client \
+   --output=yaml > deploy/service.yaml \
+   --port=8080 \
+   --type=NodePort
+```
+
+The result:<br>
+
+![15 expose service yaml with dry run](https://github.com/user-attachments/assets/aa0b5547-af33-4111-ad42-49848a2bfe75)
+
+After applying the file `deploy/service.yaml` to the cluster:<br>
+
+![16 check service](https://github.com/user-attachments/assets/0e530045-055f-468a-a482-2c7cab603374)
+
+A route object was created to obtain the URL of the service using the following command:<br>
+
+```
+oc create route edge accounts --service=accounts
+```
+
+The result with the command `oc get routes` (URL is marked red):<br>
+
+![17 create route and copy url](https://github.com/user-attachments/assets/fac8cdea-fc84-479b-988b-e28b65baaa83)
+
+If you enter the URL in your browser, our service will appear:<br>
+
+![18 url route output](https://github.com/user-attachments/assets/e125be42-6963-4497-ba0c-0b8405a6f1da)
+
+Everything works.<br>
+This means that manual deploying with Kubernetes / OpenShift is done and the Kanban board can be updated.<br>
+The next user story can be implemented.<br>
+
+![19 update kanban board move next user story to progress](https://github.com/user-attachments/assets/6aa4e714-ead0-4512-807a-aaa7559e2dfa)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
