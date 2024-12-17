@@ -4,7 +4,7 @@ Error Handlers Test Suite
 import os
 import logging
 from unittest import TestCase
-from service.common import error_handlers, status
+from service.common import status
 from service.models import db, Account, init_db
 from service.routes import app
 from service import talisman
@@ -49,7 +49,6 @@ class TestFlaskErrorHandler(TestCase):
         """Runs once after each test case"""
         db.session.remove()
 
-
     ######################################################################
     # E R R O R   H A N D L E R   T E S T   C A S E S
     ######################################################################
@@ -63,7 +62,7 @@ class TestFlaskErrorHandler(TestCase):
         """It should handle bad requests"""
         # Just use wrong data in json
         response = self.client.post(BASE_URL, json={"name": 45252})
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)  
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_not_found(self):
         """It should handle resources not found"""

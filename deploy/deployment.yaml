@@ -19,7 +19,7 @@ spec:
         app: accounts
     spec:
       containers:
-      - image: us.icr.io/sn-labs-christians21/accounts:1
+      - image: IMAGE_NAME_HERE
         name: accounts
         resources: {}
 

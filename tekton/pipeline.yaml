@@ -15,6 +15,7 @@ spec:
     - name: repo-url
     - name: branch
       default: main
+    - name: build-image
   tasks:
     - name: init
       workspaces:
@@ -36,3 +37,71 @@ spec:
         value: $(params.branch)
       runAfter:
         - init
+
+    - name: lint
+      workspaces:
+        - name: source  # Must match defined YAML workspace name of flake8
+          workspace: pipeline-workspace
+      taskRef:
+        name: flake8
+      params:
+      - name: image
+        value: python:3.9-slim
+      - name: args
+        value: ["--count", "--max-complexity=10", "--max-line-length=127", "--statistics"]
+      runAfter:
+        - clone
+
+    - name: tests
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+      taskRef:
+        name: tests
+      params:
+      - name: args
+        value: -v --with-spec --spec-color
+      - name: database_uri
+        value: sqlite:///test.db
+      runAfter:
+        - clone
+
+    - name: build
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+      taskRef:
+        name: buildah
+        # According to Tekton Doc: ClusterTasks are deprecated and ClusterResolver should be used instead.
+        # However, as required in the project, ClusterTask is still used.
+        kind: ClusterTask
+      params:
+      - name: IMAGE
+        value: $(params.build-image)
+      runAfter:
+        - lint
+        - tests
+
+    - name: deploy
+      workspaces:
+        - name: manifest-dir  # Must match defined YAML workspace name of openshift-client
+          workspace: pipeline-workspace
+      taskRef:
+        name: openshift-client
+        # According to Tekton Doc: ClusterTasks are deprecated and 
+        # ClusterResolver should be used instead.
+        # However, as required in the project, ClusterTask is still used.
+        kind: ClusterTask
+      params:
+      # Script provided by IBM
+      - name: SCRIPT
+        value: |
+          echo "Updating manifest..."
+          sed -i "s|IMAGE_NAME_HERE|$(params.build-image)|g" deploy/deployment.yaml
+          cat deploy/deployment.yaml
+          echo "Deploying to OpenShift..."
+          oc apply -f deploy/
+          oc get pods -l app=accounts
+      runAfter:
+        - build
+...

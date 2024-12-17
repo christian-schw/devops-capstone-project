@@ -14,6 +14,7 @@ spec:
       image: alpine:3
       command: [/bin/echo]
       args: ["$(params.message)"]
+
 ---
 apiVersion: tekton.dev/v1beta1
 kind: Task
@@ -50,3 +51,43 @@ spec:
           rm -rf "${WORKSPACE_SOURCE_PATH}"/..?*
         fi
 
+---
+# No nosetsts task in Tekton Hub
+# -> Must be implemented (As of: 17/12/2024)
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: tests
+spec:
+  description: This task will run nosetests on the provided input.
+  workspaces:
+    - name: source
+  params:
+    - name: args
+      description: The arguments to pass to the nose CLI
+      type: string
+      default: -v
+    # Tests require often a test database
+    - name: database_uri
+      description: Database connection string of test database
+      type: string
+      # Use SQLite, in case there is no separate database server
+      default: sqlite:///test.db
+  steps:
+    - name: nosetests
+      image: python:3.9-slim
+      workingDir: $(workspaces.source.path)
+      env:
+        - name: DATABASE_URI
+          value: $(params.database_uri)
+      script: |
+        #!/bin/bash
+        set -e
+
+        echo "**** Installing dependencies ****"
+        python -m pip install --upgrade pip wheel
+        pip install -qr requirements.txt
+
+        echo "**** Running nosetests with: $(params.args) ****"
+        nosetests $(params.args)
+...
