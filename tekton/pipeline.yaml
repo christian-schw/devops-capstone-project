@@ -81,4 +81,27 @@ spec:
       runAfter:
         - lint
         - tests
+
+    - name: deploy
+      workspaces:
+        - name: manifest-dir  # Must match defined YAML workspace name of openshift-client
+          workspace: pipeline-workspace
+      taskRef:
+        name: openshift-client
+        # According to Tekton Doc: ClusterTasks are deprecated and 
+        # ClusterResolver should be used instead.
+        # However, as required in the project, ClusterTask is still used.
+        kind: ClusterTask
+      params:
+      # Script provided by IBM
+      - name: SCRIPT
+        value: |
+          echo "Updating manifest..."
+          sed -i "s|IMAGE_NAME_HERE|$(params.build-image)|g" deploy/deployment.yaml
+          cat deploy/deployment.yaml
+          echo "Deploying to OpenShift..."
+          oc apply -f deploy/
+          oc get pods -l app=accounts
+      runAfter:
+        - build
 ...
