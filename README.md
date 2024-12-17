@@ -668,7 +668,7 @@ An image is required to create a container.<br>
 And to create an image, a Dockerfile is required.<br>
 Therefore, the Dockerfile is implemented first:<br>
 
-![4 Create Dockerfile](https://github.com/user-attachments/assets/3b1028e0-2520-4d2f-8756-9dfae3fc7a96)
+![4 Create Dockerfile](https://github.com/user-attachments/assets/8d6d52a3-2895-4540-9aaa-962808c45d68)
 
 I would not have thought of certain commands and they were specified by IBM.<br>
 These include the use of the option `--no-cache-dir` and the following lines, for example:<br>
@@ -677,6 +677,22 @@ These include the use of the option `--no-cache-dir` and the following lines, fo
 RUN useradd --uid 1000 theia && chown -R theia /app
 USER theia
 ```
+
+The Docker image is then built and the repository is tagged as `accounts` with the following command:<br>
+
+```
+docker build -t accounts .
+```
+
+Check whether an image has been created with the following command:<br>
+
+```
+docker images
+```
+
+The output which looks good:<br>
+
+![5 check docker images](https://github.com/user-attachments/assets/17e7adc5-4105-4c6b-8337-7e5511f64c62)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
