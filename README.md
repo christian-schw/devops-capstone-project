@@ -89,7 +89,7 @@ Reflection of the build status:<br>
 ## Introduction
 This capstone project / repository was created as part of IBM's `DevOps and Software Engineering` program.<br>
 A template was used - see IBM repository: https://github.com/ibm-developer-skills-network/aolwx-devops-capstone-template.<br>
-
+Many thanks to the IBM course team as well as John Rofrano (Primary Instructor) and all the other contributors!<br>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
