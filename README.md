@@ -177,6 +177,7 @@ TODO: Update tech stack
 - Python Linting: Flake8
 - Containerization: Docker
 - Container Orchestration: Kubernetes / OpenShift
+- Image Registry: IBM Cloud Container Registry
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
 <br>
