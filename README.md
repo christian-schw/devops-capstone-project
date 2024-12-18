@@ -775,7 +775,7 @@ With the command `oc get all` we can see that the Postgres service is running:<b
 ![11 create postgres ephemeral and pod is running](https://github.com/user-attachments/assets/aaec18fd-5d16-40c8-a5b1-49f99cef7546)
 
 The manifests / YAML files can now be created.<br>
-IBM provides the tip that you can write the definition of the deployment in a YAML file with the help of the flags `--dry-run-client` (= ensures that nothing is actually created) and `--output=yaml`.<br>
+IBM provides the tip that you can write the definition of the deployment in a YAML file with the help of the flags `--dry-run=client` (= ensures that nothing is actually created) and `--output=yaml`.<br>
 IBM also specifies that the image created earlier should be used in the IBM Cloud Registry and three replicas.<br>
 <br>
 I found more information with the `--help` command:<br>
